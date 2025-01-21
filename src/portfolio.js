@@ -25,7 +25,7 @@ const greeting = {
   subTitle:
     "A passionate individual who always thrives to work on end to end products which develop sustainable and scalable social and technical systems to create impact.",
   resumeLink:
-    "https://drive.google.com/file/d/1Nk8ta0RtZxNVcVZyJEtLuPVK4fUlMyFQ/view?usp=sharing",
+    "https://drive.google.com/file/d/13VuS9O5tFNbcT5Us8wCl3WwQNqzWtFAy/view?usp=sharing",
   githubProfile: "https://github.com/SuryaN1995",
 };
 
@@ -416,15 +416,6 @@ const certifications = {
       logo_path: "deeplearning_ai_logo.png",
       certificate_link:
         "https://www.coursera.org/account/accomplishments/specialization/certificate/VMR4GB7WSPXT",
-      alt_name: "deeplearning.ai",
-      color_code: "#f65c67",
-    },
-    {
-      title: "AI TensorFlow Developer",
-      subtitle: "- Laurence Moroney",
-      logo_path: "deeplearning_ai_logo.png",
-      certificate_link:
-        "https://www.coursera.org/account/accomplishments/specialization/PLEAPCSJBZT5",
       alt_name: "deeplearning.ai",
       color_code: "#f65c67",
     },
