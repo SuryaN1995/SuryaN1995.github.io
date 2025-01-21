@@ -94,7 +94,7 @@
 }
 
 .visit-btn:hover {
-  /* background-color:#6c63ffcc; */
+  background-color: #6c63ffcc;
 }
 
 .btn {
@@ -130,10 +130,6 @@
     padding: 0px;
     margin: 0px;
     float: left;
-  }
-
-  .card-img {
-    width: 200px;
   }
 
   .card-body {
