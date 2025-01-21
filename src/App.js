@@ -1,109 +1,37 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import {
-  navBar,
-  mainBody,
-  about,
-  repos,
-  education,
-  leadership,
-  skills,
-  getInTouch,
-  experiences
-} from "./editable-stuff/config.js";
-import MainBody from "./components/home/MainBody";
-import AboutMe from "./components/home/AboutMe";
-import Project from "./components/home/Project";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import Skills from "./components/home/Skills";
-// import { Blog } from "./components/blog/Blog";
-// import BlogPost from "./components/blog/BlogPost";
-import GetInTouch from "./components/home/GetInTouch.jsx";
-import Leadership from "./components/home/Leadership.jsx";
-import Timeline from "./components/home/Timeline.jsx";
-import Education from "./components/home/Education.jsx";
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import Main from "./containers/Main";
+import { ThemeProvider } from "styled-components";
+import { themesList } from "./theme";
+import { GlobalStyles } from "./global";
 
-const Home = React.forwardRef((props, ref) => {
-  return (
-    <>
-      <MainBody
-        gradient={mainBody.gradientColors}
-        title={`${mainBody.firstName} ${mainBody.middleName} ${mainBody.lastName}`}
-        message={mainBody.message}
-        icons={mainBody.icons}
-        ref={ref}
-      />
-      {about.show && (
-        <AboutMe
-          heading={about.heading}
-          message={about.message}
-          link={about.imageLink}
-          imgSize={about.imageSize}
-          resume={about.resume}
-        />
-      )}
-      {
-        experiences.show && (
-          // <Experience experiences={experiences}/>
-          <Timeline experiences={experiences}/>
-        )
-      }
-      {
-        education.show && (
-          <Education education={education} />
-        )
-      }
-      {repos.show && (
-        <Project
-          heading={repos.heading}
-          username={repos.gitHubUsername}
-          length={repos.reposLength}
-          specfic={repos.specificRepos}
-        />
-      )}
-      {leadership.show && (
-        <Leadership
-          heading={leadership.heading}
-          message={leadership.message}
-          img={leadership.images}
-          imageSize={leadership.imageSize}
-        />
-      )}
-      {skills.show && (
-        <Skills
-          heading={skills.heading}
-          hardSkills={skills.hardSkills}
-          softSkills={skills.softSkills}
-        />
-      )}
+function App() {
+  const [theme, setTheme] = useState(() => {
+    const currentThemeId = localStorage.getItem("theme_id");
+    const currentTheme = themesList.find(
+      (local) => local.id === currentThemeId
+    );
+    // Fallback to the first theme in the list if currentTheme is undefined
+    return currentTheme ? currentTheme.theme : themesList[0].theme;
+  });
+  // Default theme
 
-    </>
-  );
-});
-
-const App = () => {
-  const titleRef = React.useRef();
+  const handleThemeChange = (newTheme) => {
+    console.log("@@@@@ ", newTheme.displayName);
+    localStorage.setItem("theme_id", newTheme.id);
+    setTheme(newTheme.theme);
+  };
 
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL + "/"}>
-      {navBar.show && <Navbar ref={titleRef} />}
-      <Routes>
-        <Route path="/" exact element={<Home ref={titleRef} />} />
-      </Routes>
-      {/* {false && <Route path="/blog" exact component={Blog} />}
-      {false && <Route path="/blog/:id" component={BlogPost} />} */}
-      <Footer>
-        {getInTouch.show && (
-          <GetInTouch
-            heading={getInTouch.heading}
-            message={getInTouch.message}
-            email={getInTouch.email}
-          />
-        )}
-      </Footer>
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <>
+        <GlobalStyles />
+        <div>
+          <Main theme={theme} onThemeChange={handleThemeChange} />
+        </div>
+      </>
+    </ThemeProvider>
   );
-};
+}
 
 export default App;

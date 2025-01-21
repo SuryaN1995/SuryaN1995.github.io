@@ -1,0 +1,168 @@
+{
+  "data": [
+    {
+      "id": "a1f9-3232935cb333",
+      "name": "Github Portfolio",
+      "createdAt": "2024-12-28T04:18:19Z",
+      "url": "https://github.com/SuryaN1995/SuryaN1995.github.io",
+      "description": "🔥 The Complete Customizable Software Developer Portfolio Template which lets you showcase your work and provides each and every detail about you as Software Developer.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "HTML",
+          "iconifyClass": "logos-html-5"
+        },
+        {
+          "name": "CSS",
+          "iconifyClass": "logos-css-3"
+        },
+        {
+          "name": "JavaScript",
+          "iconifyClass": "logos-javascript"
+        },
+        {
+          "name": "Dockerfile",
+          "iconifyClass": "simple-icons:docker"
+        }
+      ]
+    },
+    {
+      "id": "8f48-56611f7060bd",
+      "name": "DataScience Learning",
+      "createdAt": "2022-02-18T04:18:19Z",
+      "url": "https://github.com/SuryaN1995/DS-Training",
+      "description": "This is a Udemy crash course tutorial of DataScience",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Python",
+          "iconifyClass": "logos-python"
+        },
+        {
+          "name": "Shell",
+          "iconifyClass": "simple-icons:shell"
+        },
+        {
+          "name": "Jupyter Notebook",
+          "iconifyClass": "logos-jupyter"
+        },
+        {
+          "name": "Udemy",
+          "iconifyClass": "simple-icons:udemy"
+        }
+      ]
+    },
+    {
+      "id": "abee-5da1e04bf145",
+      "name": "Mean App",
+      "createdAt": "2018-12-28T04:18:19Z",
+      "url": "https://github.com/SuryaN1995/Angular",
+      "description": "Created the MEAN stack learning and deployment",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "HTML",
+          "iconifyClass": "logos-html-5"
+        },
+        {
+          "name": "CSS",
+          "iconifyClass": "logos-css-3"
+        },
+        {
+          "name": "JavaScript",
+          "iconifyClass": "logos-javascript"
+        },
+        {
+          "name": "Angular",
+          "iconifyClass": "simple-icons:angular"
+        }
+      ]
+    },
+    {
+      "id": "8631-2a1e30d12144",
+      "name": "Google ML-QR scanner",
+      "createdAt": "2020-12-28T04:18:19Z",
+      "url": "https://github.com/SuryaN1995/GoogleMLQRScanCameraX",
+      "description": "This is a sample app to showcase the google ML QR code scanner library",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Kotlin",
+          "iconifyClass": "simple-icons:kotlin"
+        },
+        {
+          "name": "Firebase",
+          "iconifyClass": "simple-icons:firebase"
+        },
+        {
+          "name": "Xml",
+          "iconifyClass": "simple-icons:xml"
+        },
+        {
+          "name": "Google",
+          "iconifyClass": "simple-icons:google"
+        },
+        {
+          "name": "Gradle",
+          "iconifyClass": "simple-icons:gradle"
+        }
+      ]
+    },
+    {
+      "id": "ab8f-4c4aa4aa0bec",
+      "name": "NewsLoader",
+      "createdAt": "2020-12-28T04:18:19Z",
+      "url": "https://github.com/SuryaN1995/NewsLoader",
+      "description": "This is a sample news loader app for the basic data with pagination",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Kotlin",
+          "iconifyClass": "simple-icons:kotlin"
+        },
+        {
+          "name": "Firebase",
+          "iconifyClass": "simple-icons:firebase"
+        },
+        {
+          "name": "Xml",
+          "iconifyClass": "simple-icons:xml"
+        },
+        {
+          "name": "Gradle",
+          "iconifyClass": "simple-icons:gradle"
+        }
+      ]
+    },
+    {
+      "id": "83a9-dc4a89422847",
+      "name": "Hilt Dependency injection",
+      "createdAt": "2020-02-12T04:18:19Z",
+      "url": "https://github.com/SuryaN1995/HiltDependencyInjection",
+      "description": "This is a sample app to showcase the Hilt dependency injection library",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Kotlin",
+          "iconifyClass": "simple-icons:kotlin"
+        },
+        {
+          "name": "Firebase",
+          "iconifyClass": "simple-icons:firebase"
+        },
+        {
+          "name": "Xml",
+          "iconifyClass": "simple-icons:xml"
+        },
+        {
+          "name": "Google",
+          "iconifyClass": "simple-icons:google"
+        },
+        {
+          "name": "Gradle",
+          "iconifyClass": "simple-icons:gradle"
+        }
+      ]
+    }
+  ]
+}
