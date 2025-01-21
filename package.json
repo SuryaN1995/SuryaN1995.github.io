@@ -1,7 +1,7 @@
 {
   "private": true,
-  "name": "masterPortfolio",
-  "version": "1.0.0",
+  "name": "suryan1995.github.io",
+  "version": "1.1.0",
   "homepage": ".",
   "scripts": {
     "build": "react-scripts --openssl-legacy-provider build",
