@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "./static/css/main.97cea9d5.chunk.css",
+    "main.css": "./static/css/main.c2cf06ab.chunk.css",
     "main.js": "./static/js/main.d0fd4869.chunk.js",
     "main.js.map": "./static/js/main.d0fd4869.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.87e10717.js",
@@ -8,9 +8,9 @@
     "static/js/2.86bff4eb.chunk.js": "./static/js/2.86bff4eb.chunk.js",
     "static/js/2.86bff4eb.chunk.js.map": "./static/js/2.86bff4eb.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.a14504b0de0cb8c5462bc627e818dbf0.js": "./precache-manifest.a14504b0de0cb8c5462bc627e818dbf0.js",
+    "precache-manifest.607176367a9e8c84bf33c35db21a8f40.js": "./precache-manifest.607176367a9e8c84bf33c35db21a8f40.js",
     "service-worker.js": "./service-worker.js",
-    "static/css/main.97cea9d5.chunk.css.map": "./static/css/main.97cea9d5.chunk.css.map",
+    "static/css/main.c2cf06ab.chunk.css.map": "./static/css/main.c2cf06ab.chunk.css.map",
     "static/media/index.css": "./static/media/Montserrat-Regular.ee653992.ttf",
     "static/media/address_image.svg": "./static/media/address_image.16559172.svg",
     "static/media/airtel_logo.svg": "./static/media/airtel_logo.dff4a311.svg",
@@ -55,7 +55,7 @@
   "entrypoints": [
     "static/js/runtime-main.87e10717.js",
     "static/js/2.86bff4eb.chunk.js",
-    "static/css/main.97cea9d5.chunk.css",
+    "static/css/main.c2cf06ab.chunk.css",
     "static/js/main.d0fd4869.chunk.js"
   ]
 }
