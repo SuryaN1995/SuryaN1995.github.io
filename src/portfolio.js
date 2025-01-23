@@ -25,7 +25,7 @@ const greeting = {
   subTitle:
     "A passionate individual who always thrives to work on end to end products which develop sustainable and scalable social and technical systems to create impact.",
   resumeLink:
-    "https://drive.google.com/file/d/13VuS9O5tFNbcT5Us8wCl3WwQNqzWtFAy/view?usp=sharing",
+    "https://drive.google.com/file/d/1Xyw1_nq2iqAYMptzn4ONcXWkt6E2vS_S/view?usp=sharing",
   githubProfile: "https://github.com/SuryaN1995",
 };
 
@@ -40,7 +40,7 @@ const socialMediaLinks = [
   },
   {
     name: "LinkedIn",
-    link: "https://www.linkedin.com/in/surya-n-b0103a103/",
+    link: "https://www.linkedin.com/in/surya-n/",
     fontAwesomeIcon: "fa-linkedin-in", // Reference https://fontawesome.com/icons/linkedin-in?style=brands
     backgroundColor: "#0077B5", // Reference https://simpleicons.org/?q=linkedin
   },
@@ -315,7 +315,7 @@ const competitiveSites = {
       style: {
         color: "#F79F1B",
       },
-      profileLink: "https://leetcode.com/u/user8335Fr/",
+      profileLink: "https://leetcode.com/u/surya_natarajan/",
     },
     {
       siteName: "HackerRank",
@@ -325,14 +325,14 @@ const competitiveSites = {
       },
       profileLink: "https://www.hackerrank.com/profile/surya_n1447",
     },
-    /*     {
+    {
       siteName: "Codechef",
       iconifyClassname: "simple-icons:codechef",
       style: {
         color: "#5B4638",
       },
-      profileLink: "https://www.codechef.com/users/ashutosh_1919",
-    },
+      profileLink: "https://www.codechef.com/users/surya_n1447",
+    } /*,
     {
       siteName: "Codeforces",
       iconifyClassname: "simple-icons:codeforces",
@@ -340,7 +340,7 @@ const competitiveSites = {
         color: "#1F8ACB",
       },
       profileLink: "http://codeforces.com/profile/layman_brother",
-    }, */
+    }, */,
     {
       siteName: "Hackerearth",
       iconifyClassname: "simple-icons:hackerearth",
