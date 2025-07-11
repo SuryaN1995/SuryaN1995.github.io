@@ -4,6 +4,7 @@ import Main from "./containers/Main";
 import { ThemeProvider } from "styled-components";
 import { themesList } from "./theme";
 import { GlobalStyles } from "./global";
+import { analytics, logEvent } from "./Firebase";
 
 function App() {
   const [theme, setTheme] = useState(() => {
@@ -21,7 +22,12 @@ function App() {
     localStorage.setItem("theme_id", newTheme.id);
     setTheme(newTheme.theme);
   };
-
+  localStorage.setItem("debug_mode", "true");
+  debugger;
+  logEvent(analytics, "screen_view", {
+    firebase_screen: "App",
+    firebase_screen_class: "App.js",
+  });
   return (
     <ThemeProvider theme={theme}>
       <>
