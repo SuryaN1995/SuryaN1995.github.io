@@ -31,33 +31,21 @@ class ExperienceCard extends Component {
           <span
             className="experience-card-stepper-dot"
             style={{
-              backgroundColor: theme.headerColor,
+              backgroundColor: theme.accentColor,
               boxShadow: `0 0 0 4px ${theme.body}`,
             }}
           />
         </div>
         <Fade right duration={2000} distance="40px">
           <div className="experience-card-wrapper">
-            <div
-              className="arrow-left"
-              style={{ borderRight: `10px solid ${theme.body}` }}
-            />
-            <div
-              className="experience-card"
-              style={{ background: `${theme.body}` }}
-            >
+            <div className="arrow-left" />
+            <div className="experience-card">
               <div className="experience-card-header-div">
                 <div>
-                  <h3
-                    className="experience-card-title"
-                    style={{ color: theme.text }}
-                  >
+                  <h3 className="experience-card-title">
                     {experience["title"]}
                   </h3>
-                  <p
-                    className="experience-card-company"
-                    style={{ color: theme.text }}
-                  >
+                  <p className="experience-card-company">
                     <a
                       href={experience["company_url"]}
                       target="_blank"
@@ -68,24 +56,15 @@ class ExperienceCard extends Component {
                   </p>
                 </div>
                 <div className="experience-card-heading-right">
-                  <p
-                    className="experience-card-duration"
-                    style={{ color: theme.secondaryText }}
-                  >
+                  <p className="experience-card-duration">
                     {experience["duration"]}
                   </p>
-                  <p
-                    className="experience-card-location"
-                    style={{ color: theme.secondaryText }}
-                  >
+                  <p className="experience-card-location">
                     {experience["location"]}
                   </p>
                 </div>
               </div>
-              <p
-                className="experience-card-description"
-                style={{ color: theme.text }}
-              >
+              <p className="experience-card-description">
                 {experience["description"]}
               </p>
             </div>

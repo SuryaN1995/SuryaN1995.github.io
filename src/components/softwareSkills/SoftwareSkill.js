@@ -14,7 +14,12 @@ class SoftwareSkill extends React.Component {
                   key={logo.skillName}
                   placement={"top"}
                   overlay={
-                    <Tooltip id={`tooltip-top`}>
+                    <Tooltip
+                      id={`tooltip-skill-${logo.skillName.replace(
+                        /\s+/g,
+                        "-"
+                      )}`}
+                    >
                       <strong>{logo.skillName}</strong>
                     </Tooltip>
                   }

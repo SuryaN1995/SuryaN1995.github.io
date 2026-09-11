@@ -1,0 +1,5 @@
+# Compiled output is already minified; running prettier over it on commit
+# expands the bundles into thousands of lines.
+build
+node_modules
+package-lock.json

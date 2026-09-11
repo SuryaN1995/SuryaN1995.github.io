@@ -1,19 +1,20 @@
 .projects-main {
   width: 100%;
-  text-align: center;
 }
 
 .basic-projects {
-  margin-left: 5%;
-  margin-right: 5%;
+  width: 100%;
+  max-width: var(--container-wide);
+  padding: 0 var(--space-6);
+  margin: 0 auto;
 }
 
 .projects-heading-div {
-  display: flex;
-}
-
-.projects-heading-div > * {
-  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--space-7);
+  padding: var(--space-7) 0 var(--space-6);
 }
 
 .projects-heading-img-div {
@@ -22,96 +23,102 @@
   justify-content: center;
 }
 
-.projects-heading-text-div {
-  text-align: center;
-}
-
 .projects-heading-img-div > * {
   max-width: 100%;
   height: auto;
 }
 
+.projects-heading-text-div {
+  text-align: left;
+}
+
 .projects-heading-text {
-  font-size: 56px;
-  font-weight: 400;
-  font-family: "Google Sans Medium";
-  line-height: 1.1;
-  text-align: center;
-  margin-top: 80px;
+  margin: 0;
+  font-family: "Google Sans Bold", inherit;
+  font-size: var(--text-3xl);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
 }
 
 .projects-heading-sub-text {
-  font-size: 30px;
-  font-family: "Google Sans Regular";
-  text-align: center;
-  margin-bottom: 10px;
+  margin: var(--space-3) 0 0;
+  font-family: "Google Sans Regular", inherit;
+  font-size: var(--text-xl);
+  color: var(--color-text);
 }
 
 .projects-header-detail-text {
-  font-size: 20px;
-  line-height: 30px;
-  margin-top: 0px;
-  margin-left: 20px;
-  margin-right: 20px;
-  font-family: "Google Sans Medium";
+  max-width: 60ch;
+  margin: var(--space-4) 0 0;
+  color: var(--color-muted);
+  font-family: "Google Sans Regular", inherit;
+  font-size: var(--text-base);
+  line-height: 1.7;
 }
+
+.publications-heading-div {
+  padding: var(--space-8) 0 0;
+}
+
 .publications-heading-text-div {
   text-align: center;
-  font-family: "Google Sans Regular";
-  margin-top: 70px;
 }
 
 .publications-heading-text {
-  font-size: 56px;
-  font-weight: 600;
-}
-.repo-cards-div-main {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1rem 1rem;
-  margin-left: 40px;
-  margin-right: 40px;
-  margin-top: 60px;
+  margin: 0;
+  font-family: "Google Sans Bold", inherit;
+  font-size: var(--text-3xl);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
 }
 
-@media (max-width: 1380px) {
-  .projects-heading-text {
-    font-size: 50px;
-    margin-top: 80px;
+.publications-heading-text-div .projects-header-detail-text {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.repo-cards-div-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-5);
+  width: 100%;
+  max-width: var(--container-wide);
+  padding: 0 var(--space-6);
+  margin: var(--space-6) auto 0;
+}
+
+@media (max-width: 1024px) {
+  .projects-heading-div {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+    text-align: center;
   }
-  .projects-heading-sub-text {
-    font-size: 25px;
+
+  .projects-heading-text-div {
+    text-align: center;
+  }
+
+  .projects-header-detail-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .projects-heading-img-div {
+    max-width: 420px;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 768px) {
-  .projects-heading-text,
-  .publications-heading-text {
-    font-size: 30px;
-    margin-top: 20px;
-  }
-
-  .projects-heading-sub-text {
-    font-size: 20px;
-  }
-
-  .projects-heading-div {
-    flex-direction: column;
-  }
-
-  .projects-header-detail-text {
-    font-size: 16px;
-    margin-right: 0px;
-    margin-left: 0px;
-    line-height: normal;
-    text-align: center;
+  .basic-projects,
+  .repo-cards-div-main {
+    padding: 0 var(--space-4);
   }
 
   .repo-cards-div-main {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 30px;
+    grid-template-columns: 1fr;
   }
 }

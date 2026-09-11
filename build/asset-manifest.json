@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "./static/css/main.425a15df.chunk.css",
-    "main.js": "./static/js/main.5139f25d.chunk.js",
-    "main.js.map": "./static/js/main.5139f25d.chunk.js.map",
+    "main.css": "./static/css/main.0adbb9e2.chunk.css",
+    "main.js": "./static/js/main.c52171e0.chunk.js",
+    "main.js.map": "./static/js/main.c52171e0.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.87e10717.js",
     "runtime-main.js.map": "./static/js/runtime-main.87e10717.js.map",
-    "static/js/2.25ac56e8.chunk.js": "./static/js/2.25ac56e8.chunk.js",
-    "static/js/2.25ac56e8.chunk.js.map": "./static/js/2.25ac56e8.chunk.js.map",
+    "static/js/2.6573fd6d.chunk.js": "./static/js/2.6573fd6d.chunk.js",
+    "static/js/2.6573fd6d.chunk.js.map": "./static/js/2.6573fd6d.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.797867f31f4899bad6c14b0a31ef3bf9.js": "./precache-manifest.797867f31f4899bad6c14b0a31ef3bf9.js",
+    "precache-manifest.d7cf1b9ab3191931cd26e6415505de95.js": "./precache-manifest.d7cf1b9ab3191931cd26e6415505de95.js",
     "service-worker.js": "./service-worker.js",
-    "static/css/main.425a15df.chunk.css.map": "./static/css/main.425a15df.chunk.css.map",
-    "static/media/index.css": "./static/media/Montserrat-Regular.ee653992.ttf",
+    "static/css/main.0adbb9e2.chunk.css.map": "./static/css/main.0adbb9e2.chunk.css.map",
+    "static/media/index.css": "./static/media/GoogleSans-Regular.b5c77a6a.ttf",
     "static/media/airtel_logo.svg": "./static/media/airtel_logo.dff4a311.svg",
     "static/media/datamatics_logo.svg": "./static/media/datamatics_logo.5119dcec.svg",
     "static/media/deeplearning_ai_logo.png": "./static/media/deeplearning_ai_logo.75a7107b.png",
@@ -22,8 +22,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.87e10717.js",
-    "static/js/2.25ac56e8.chunk.js",
-    "static/css/main.425a15df.chunk.css",
-    "static/js/main.5139f25d.chunk.js"
+    "static/js/2.6573fd6d.chunk.js",
+    "static/css/main.0adbb9e2.chunk.css",
+    "static/js/main.c52171e0.chunk.js"
   ]
 }

@@ -1,23 +1,44 @@
-.dev-icons {
-  padding-left: 0;
+.competitive-sites-main-div .dev-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding: 0;
+  margin: var(--space-5) 0 0;
   list-style: none;
-  font-size: 3rem;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  text-align: center;
+  font-size: 2rem;
 }
 
 .competitive-sites-inline {
-  display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  font-family: "Google Sans Regular";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Google Sans Regular", inherit;
 }
 
-.competitive-sites-inline > i {
-  color: #868e96;
+.competitive-sites-inline > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-muted);
+  transition: transform var(--dur) var(--ease-out),
+    color var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out),
+    box-shadow var(--dur) var(--ease-out);
 }
 
-.competitive-sites-inline > i:hover {
-  color: #645beb;
+.competitive-sites-inline > a:hover {
+  transform: translateY(-4px);
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 1024px) {
+  .competitive-sites-main-div .dev-icons {
+    justify-content: center;
+  }
 }

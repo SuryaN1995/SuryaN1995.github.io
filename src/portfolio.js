@@ -77,10 +77,21 @@ const skills = {
       fileName: "DataScienceImg",
       skills: [
         "⚡ Developing highly scalable production ready models for various deeplearning and statistical use cases",
-        "⚡ Experience of working with Computer Vision and NLP projects",
+        "⚡ Building GenAI applications with LLMs covering retrieval augmented generation, prompt engineering and fine tuning",
+        "⚡ NLP solutions for text classification, named entity recognition and semantic search",
+        "⚡ Experience of working with Computer Vision projects across object detection, segmentation and OCR",
+        "⚡ End to end MLOps on Databricks using MLflow for experiment tracking, model registry and deployment",
         "⚡ Complex quantitative modelling for dynamic forecasting and time series analysis",
       ],
       softwareSkills: [
+        {
+          skillName: "Python",
+          fontAwesomeClassname: "ion-logo-python",
+          style: {
+            backgroundColor: "transparent",
+            color: "#3776AB",
+          },
+        },
         {
           skillName: "Tensorflow",
           fontAwesomeClassname: "logos-tensorflow",
@@ -92,23 +103,94 @@ const skills = {
           skillName: "Keras",
           fontAwesomeClassname: "simple-icons:keras",
           style: {
-            backgroundColor: "white",
+            backgroundColor: "transparent",
             color: "#D00000",
           },
         },
         {
           skillName: "PyTorch",
-          fontAwesomeClassname: "logos-pytorch",
+          fontAwesomeClassname: "simple-icons:pytorch",
+          style: {
+            backgroundColor: "transparent",
+            color: "#EE4C2C",
+          },
+        },
+        {
+          skillName: "Scikit-learn",
+          fontAwesomeClassname: "simple-icons:scikitlearn",
+          style: {
+            backgroundColor: "transparent",
+            color: "#F7931E",
+          },
+        },
+        {
+          skillName: "Pandas",
+          fontAwesomeClassname: "simple-icons:pandas",
+          style: {
+            backgroundColor: "transparent",
+            color: "#E70488",
+          },
+        },
+        {
+          skillName: "NumPy",
+          fontAwesomeClassname: "logos:numpy",
           style: {
             backgroundColor: "transparent",
           },
         },
         {
-          skillName: "Python",
-          fontAwesomeClassname: "ion-logo-python",
+          skillName: "OpenCV",
+          fontAwesomeClassname: "simple-icons:opencv",
           style: {
             backgroundColor: "transparent",
-            color: "#3776AB",
+            color: "#5C3EE8",
+          },
+        },
+        {
+          skillName: "Hugging Face",
+          fontAwesomeClassname: "logos:hugging-face-icon",
+          style: {
+            backgroundColor: "transparent",
+          },
+        },
+        {
+          // Monochrome marks intentionally omit `color` so they inherit the
+          // theme text colour and stay legible on both light and dark themes.
+          skillName: "LangChain",
+          fontAwesomeClassname: "simple-icons:langchain",
+          style: {
+            backgroundColor: "transparent",
+          },
+        },
+        {
+          skillName: "OpenAI",
+          fontAwesomeClassname: "simple-icons:openai",
+          style: {
+            backgroundColor: "transparent",
+          },
+        },
+        {
+          skillName: "Databricks",
+          fontAwesomeClassname: "simple-icons:databricks",
+          style: {
+            backgroundColor: "transparent",
+            color: "#FF3621",
+          },
+        },
+        {
+          skillName: "MLflow",
+          fontAwesomeClassname: "simple-icons:mlflow",
+          style: {
+            backgroundColor: "transparent",
+            color: "#0194E2",
+          },
+        },
+        {
+          skillName: "Apache Spark",
+          fontAwesomeClassname: "simple-icons:apachespark",
+          style: {
+            backgroundColor: "transparent",
+            color: "#E25A1C",
           },
         },
         {
@@ -350,13 +432,15 @@ const degrees = {
   degrees: [
     {
       title: "Vidya Vikas Institute of Engineering and Technology",
-      subtitle: "B.E. in Computer Engineering",
+      subtitle: "B.E. in Computer Science Engineering · Mysuru, Karnataka",
       logo_path: "vidya_logo.png",
       alt_name: "VVIET Mysuru",
-      duration: "2013 - 2017",
+      duration: "June 2013 – June 2017",
+      gpa: "7.5 / 10 CGPA",
       descriptions: [
-        "⚡ I have studied basic software engineering subjects like DS, Algorithms, DBMS, OS, CA, AI etc.",
-        "⚡ Apart from this, I have done courses on Deep Learning, Data Science, and hackathons.",
+        "⚡ Coursework: Data Structures and Algorithms, Database Management Systems, Computer Networks, Operating Systems, and Computer Architecture.",
+        "⚡ Additional learning: Completed courses on Data Science and Python to strengthen analytical and programming skills.",
+        "⚡ Projects and hackathons: Built prototypes, presented findings to peers, and addressed software usability issues from user-testing feedback.",
       ],
       website_link: "http://vidyavikasengineering.com/",
     },

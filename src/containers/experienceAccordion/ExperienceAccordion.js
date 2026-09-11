@@ -16,23 +16,41 @@ class ExperienceAccordion extends Component {
                 title={section["title"]}
                 key={section["title"]}
                 overrides={{
-                  Header: {
+                  PanelContainer: {
+                    // baseui draws a full-width rule under every panel, which
+                    // reads as a stray line beneath these rounded headers.
                     style: () => ({
-                      backgroundColor: `${theme.body}`,
-                      border: `1px solid`,
-                      borderRadius: `5px`,
-                      borderColor: `${theme.headerColor}`,
-                      marginBottom: `3px`,
+                      borderBottomWidth: "0px",
+                      borderBottomStyle: "none",
+                      borderBottomColor: "transparent",
+                    }),
+                  },
+                  Header: {
+                    // Styletron warns when a `border` shorthand sits next to a
+                    // longhand, so every edge is declared longhand here.
+                    style: () => ({
+                      backgroundColor: theme.body,
+                      borderTop: `1px solid ${theme.headerColor}`,
+                      borderRight: `1px solid ${theme.headerColor}`,
+                      borderBottom: `1px solid ${theme.headerColor}`,
+                      borderLeft: `1px solid ${theme.headerColor}`,
+                      borderTopLeftRadius: "14px",
+                      borderTopRightRadius: "14px",
+                      borderBottomLeftRadius: "14px",
+                      borderBottomRightRadius: "14px",
+                      marginBottom: "8px",
                       fontFamily: "Google Sans Regular",
-                      color: `${theme.text}`,
+                      color: theme.text,
                       ":hover": {
-                        color: `${theme.secondaryText}`,
+                        color: theme.secondaryText,
                       },
                     }),
                   },
                   Content: {
                     style: () => ({
-                      backgroundColor: `${theme.body}`,
+                      backgroundColor: theme.body,
+                      borderBottomLeftRadius: "14px",
+                      borderBottomRightRadius: "14px",
                     }),
                   },
                 }}

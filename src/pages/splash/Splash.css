@@ -1,59 +1,233 @@
-.logo_wrapper {
-  height: 100vh;
-  width: 100vw;
-  align-items: center;
-  justify-content: center;
-}
-
-.screen {
-  height: 100%;
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-body {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.screen {
-  /* background-color: #55198b; */
   overflow: hidden;
-  border-radius: 100%;
-  animation: grow 5.5s forwards;
+  color: var(--splash-ink);
+  background: radial-gradient(
+    130% 110% at 50% 18%,
+    var(--splash-bg) 0%,
+    var(--splash-deep) 100%
+  );
+  animation: splash-fade-in 500ms var(--ease-out) both;
 }
 
-@keyframes grow {
+/* Soft accent bloom behind the mark, so the backdrop isn't a flat fill. */
+.splash__glow {
+  position: absolute;
+  width: min(76vw, 660px);
+  height: min(76vw, 660px);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(var(--splash-accent-rgb), 0.3) 0%,
+    rgba(var(--splash-accent-rgb), 0.08) 42%,
+    rgba(var(--splash-accent-rgb), 0) 68%
+  );
+  animation: splash-breathe 3.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.splash__ring {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border: 1px solid rgba(var(--splash-ink-rgb), 0.22);
+  border-radius: 50%;
+  opacity: 0;
+  animation: splash-ripple 2800ms var(--ease-out) infinite;
+  pointer-events: none;
+}
+
+.splash__ring--delayed {
+  animation-delay: 1000ms;
+}
+
+.splash__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.splash__logo svg {
+  display: block;
+  width: min(46vw, 290px);
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 6px 22px rgba(var(--splash-accent-rgb), 0.35));
+}
+
+/* Each stroke draws itself in sequence: emblem first, then the signature. */
+.splash__logo path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  stroke-linecap: round;
+  animation: splash-draw 1100ms ease-out forwards;
+}
+
+.splash__logo .logo1 {
+  animation-delay: 120ms;
+}
+.splash__logo .logo2 {
+  animation-delay: 260ms;
+}
+.splash__logo .signature1 {
+  animation-delay: 620ms;
+}
+.splash__logo .signature2 {
+  animation-delay: 760ms;
+}
+.splash__logo .signature3 {
+  animation-delay: 900ms;
+}
+.splash__logo .signature4 {
+  animation-delay: 1040ms;
+}
+.splash__logo .signature5 {
+  animation-delay: 1180ms;
+}
+.splash__logo .signature6 {
+  animation-delay: 1320ms;
+}
+
+.splash__handle {
+  margin: var(--space-5) 0 0;
+  color: rgba(var(--splash-ink-rgb), 0.62);
+  font-family: "Google Sans Medium", inherit;
+  font-size: var(--text-sm);
+  letter-spacing: 0.42em;
+  text-indent: 0.42em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: splash-rise 700ms var(--ease-out) 1700ms forwards;
+}
+
+.splash__progress {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(48px, 12vh, 110px);
+  width: min(200px, 44vw);
+  height: 2px;
+  overflow: hidden;
+  border-radius: var(--radius-pill);
+  background: rgba(var(--splash-ink-rgb), 0.16);
+  transform: translateX(-50%);
+}
+
+.splash__progress-bar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--splash-accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  animation: splash-progress var(--splash-duration) linear forwards;
+}
+
+.splash--leaving {
+  animation: splash-fade-out var(--splash-exit) var(--ease-out) forwards;
+}
+
+@keyframes splash-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes splash-progress {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes splash-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes splash-breathe {
+  0%,
+  100% {
+    opacity: 0.75;
+    transform: scale(0.94);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes splash-ripple {
   0% {
-    transform: scale(0);
+    opacity: 0.5;
+    transform: scale(0.7);
   }
-  10% {
-    transform: scale(1);
-    border-radius: 0%;
-    height: 100%;
-    width: 100%;
-  }
-  90% {
-    transform: scale(1);
-    border-radius: 0%;
-    height: 100%;
-    width: 100%;
+  80% {
+    opacity: 0;
+    transform: scale(1.5);
   }
   100% {
-    transform: scale(1);
-    border-radius: 0%;
-    height: 100%;
-    width: 100%;
+    opacity: 0;
+    transform: scale(1.5);
   }
 }
 
-#logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+@keyframes splash-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes splash-fade-out {
+  to {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 768px) {
+  .splash__ring {
+    width: 210px;
+    height: 210px;
+  }
+
+  .splash__handle {
+    letter-spacing: 0.3em;
+    text-indent: 0.3em;
+  }
+}
+
+/* The global reduced-motion rule collapses every duration, which would leave
+   the mark undrawn; show the finished state instead. */
+@media (prefers-reduced-motion: reduce) {
+  .splash__logo path {
+    stroke-dashoffset: 0;
+  }
+
+  .splash__handle {
+    opacity: 1;
+  }
+
+  .splash__progress-bar {
+    transform: scaleX(1);
+  }
+
+  .splash__ring {
+    display: none;
+  }
 }

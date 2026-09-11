@@ -1,6 +1,5 @@
-.header li .theme-switcher {
+.theme-switcher {
   display: block;
-  padding: 12px 20px;
 }
 
 .theme-switcher__trigger {
@@ -9,18 +8,19 @@
   gap: 10px;
   padding: 8px 14px;
   border: 1px solid transparent;
-  border-radius: 48px;
-  font-family: "Google Sans Regular";
-  font-size: 0.85rem;
+  border-radius: var(--radius-pill);
+  font-family: "Google Sans Regular", inherit;
+  font-size: var(--text-sm);
   line-height: 1;
   cursor: pointer;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+  transition: transform var(--dur) var(--ease-out),
+    box-shadow var(--dur) var(--ease-out), filter var(--dur) var(--ease-out);
 }
 
 .theme-switcher__trigger:hover {
   transform: translateY(-1px);
   filter: brightness(0.97);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-md);
 }
 
 .theme-switcher__trigger:active {
@@ -189,11 +189,14 @@
   color: var(--ts-accent);
 }
 
-@media (max-width: 47.99em) {
-  .header li .theme-switcher {
-    padding: 12px 20px 20px;
+@media (max-width: 900px) {
+  .theme-switcher__trigger {
+    width: 100%;
+    justify-content: flex-start;
   }
+}
 
+@media (max-width: 640px) {
   .theme-panel__grid {
     grid-template-columns: minmax(0, 1fr);
   }

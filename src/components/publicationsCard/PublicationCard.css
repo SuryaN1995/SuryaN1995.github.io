@@ -1,80 +1,67 @@
 .publication-card-div {
-  color: rgb(88, 96, 105);
-  background-color: rgb(255, 255, 255);
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 30px -15px;
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  color: var(--color-text);
+  text-decoration: none;
   cursor: pointer;
-  flex: 1 1 25%;
-}
-.publication-card-div:hover {
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px -10px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--dur) var(--ease-out),
+    box-shadow var(--dur) var(--ease-out),
+    border-color var(--dur) var(--ease-out);
 }
 
-.publication-name-div {
-  display: flex;
-  align-items: center;
+.publication-card-div:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-lg);
 }
 
 .publication-name {
+  margin: 0;
+  color: var(--color-text);
+  font-family: "Google Sans Medium", inherit;
+  font-size: var(--text-xl);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
   text-align: left;
-  color: rgb(36, 41, 46);
-  font-family: "Google Sans Regular";
-  margin-bottom: 0.75rem;
-  font-size: 25px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  overflow: hidden;
-  line-height: 1.2;
-  margin: 0px;
 }
 
 .publication-description {
-  overflow: hidden;
-  text-align: left;
   display: -webkit-box;
-  font-family: "Google Sans Regular";
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  margin-top: 0.8rem;
+  overflow: hidden;
+  margin: var(--space-3) 0 var(--space-5);
+  color: var(--color-muted);
+  font-family: "Google Sans Regular", inherit;
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  text-align: left;
 }
 
 .publication-details {
   display: flex;
-  flex-direction: row;
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
 }
 
 .publication-creation-date {
   margin: 0;
-  font-family: "Google Sans Regular";
+  color: var(--color-muted);
+  font-family: "Google Sans Regular", inherit;
+  font-size: var(--text-xs);
   font-weight: 400;
-  margin-left: 0px;
-  margin-right: auto;
-}
-
-@media (max-width: 1200px) {
-  .publication-card-div {
-    flex: 1 1 40%;
-  }
 }
 
 @media (max-width: 768px) {
   .publication-card-div {
-    flex: 1 1 100%;
-  }
-
-  .publication-name {
-    font-size: 16px;
-  }
-
-  .publication-description {
-    font-size: 14px;
-  }
-
-  .publication-details {
-    flex-direction: column;
-  }
-
-  .publication-creation-date {
-    font-size: 14px;
+    padding: var(--space-4);
   }
 }

@@ -3,16 +3,25 @@
 }
 
 .basic-education {
-  margin-left: 5%;
-  margin-right: 5%;
+  width: 100%;
+  max-width: var(--container-wide);
+  padding: 0 var(--space-6);
+  margin: 0 auto;
+}
+
+/* Educations/Certifications reuse `.main`, but here they sit inside a
+   container already, so drop the second layer of gutters. */
+.basic-education .main {
+  max-width: none;
+  padding: 0;
 }
 
 .heading-div {
-  display: flex;
-}
-
-.heading-div > * {
-  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--space-7);
+  padding: var(--space-7) 0 var(--space-6);
 }
 
 .heading-img-div {
@@ -21,51 +30,50 @@
   justify-content: center;
 }
 
-.heading-text-div {
-  text-align: center;
-}
-
 .heading-img-div > * {
   max-width: 100%;
   height: auto;
 }
 
+.heading-text-div {
+  text-align: left;
+}
+
 .heading-text {
-  font-size: 56px;
-  font-weight: 400;
-  font-family: "Google Sans Medium";
-  line-height: 1.1;
-  text-align: center;
-  margin-top: 100px;
+  margin: 0;
+  font-family: "Google Sans Bold", inherit;
+  font-size: var(--text-3xl);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
 }
 
 .heading-sub-text {
-  font-size: 30px;
-  font-family: "Google Sans Regular";
-  text-align: center;
+  margin: var(--space-3) 0 0;
+  color: var(--color-muted);
+  font-family: "Google Sans Regular", inherit;
+  font-size: var(--text-xl);
+  font-weight: 400;
 }
 
-@media (max-width: 1380px) {
-  .heading-text {
-    font-size: 50px;
-    margin-top: 80px;
+@media (max-width: 1024px) {
+  .heading-div {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
   }
-  .heading-sub-text {
-    font-size: 25px;
+
+  .heading-text-div {
+    text-align: center;
+  }
+
+  .heading-img-div {
+    max-width: 420px;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 768px) {
-  .heading-text {
-    font-size: 30px;
-    margin-top: 20px;
-  }
-
-  .heading-sub-text {
-    font-size: 20px;
-  }
-
-  .heading-div {
-    flex-direction: column;
+  .basic-education {
+    padding: 0 var(--space-4);
   }
 }

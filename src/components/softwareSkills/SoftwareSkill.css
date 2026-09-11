@@ -1,27 +1,56 @@
 .dev-icons {
-  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding: 0;
+  margin: 0 0 var(--space-5);
   list-style: none;
-  font-size: 3rem;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  text-align: center;
 }
 
+/* Each stack logo sits on its own tile so the row reads as a toolbelt. */
 .software-skill-inline {
-  display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  font-family: "Google Sans Regular";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  font-size: 1.9rem;
+  line-height: 1;
+  cursor: default;
+  transition: transform var(--dur) var(--ease-out),
+    box-shadow var(--dur) var(--ease-out),
+    border-color var(--dur) var(--ease-out);
 }
 
-.software-skill-inline > i {
-  color: #868e96;
-}
-
-.software-skill-inline > i:hover {
-  color: #645beb;
+.software-skill-inline:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
 }
 
 .skill-image {
-  height: 48px;
+  height: 34px;
+  width: auto;
+  filter: var(--logo-invert);
+}
+
+@media (max-width: 1024px) {
+  .dev-icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .software-skill-inline {
+    width: 48px;
+    height: 48px;
+    font-size: 1.6rem;
+  }
+
+  .skill-image {
+    height: 28px;
+  }
 }

@@ -4,11 +4,6 @@
     url("./assets/fonts/Corinthia-Bold.ttf") format("woff");
 }
 @font-face {
-  font-family: "Montserrat";
-  src: local("Montserrat"),
-    url("./assets/fonts/Montserrat-Regular.ttf") format("woff");
-}
-@font-face {
   font-family: "Google Sans Bold";
   src: local("Google Sans Bold"),
     url("./assets/fonts/GoogleSans-Bold.ttf") format("woff");
@@ -32,22 +27,141 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
 html,
 body {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
+
 body {
   margin: 0;
-  font: 19px / 23px Montserrat, "Montserrat", sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
-/* Media Query */
+
+img {
+  max-width: 100%;
+}
+
 @media (max-width: 1380px) {
-  html,
   body {
     font-size: 16px;
-    line-height: normal;
   }
+}
+
+/* react-bootstrap renders tooltips into a body portal but the project never
+   loads Bootstrap's stylesheet, so they arrived as unstyled body-sized text
+   sitting on top of the layout. These rules cover only the tooltip markup. */
+.tooltip {
+  position: absolute;
+  z-index: 1070;
+  display: block;
+  margin: 0;
+  font-family: "Google Sans Regular", inherit;
+  font-size: var(--text-xs);
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+  text-transform: none;
+  letter-spacing: normal;
+  white-space: normal;
+  word-break: normal;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Padding on the placement wrapper reserves room for the arrow so the bubble
+   never sits flush against the icon it describes. */
+.bs-tooltip-top,
+.bs-tooltip-bottom {
+  padding: 5px 0;
+}
+
+.bs-tooltip-left,
+.bs-tooltip-right {
+  padding: 0 5px;
+}
+
+.tooltip.fade {
+  transition: opacity var(--dur-fast) var(--ease-out);
+}
+
+.tooltip.show {
+  opacity: 1;
+}
+
+.tooltip-inner {
+  max-width: 220px;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--color-text);
+  color: var(--color-bg);
+  box-shadow: var(--shadow-lg);
+}
+
+.tooltip-inner strong {
+  font-family: "Google Sans Medium", inherit;
+  font-weight: 500;
+}
+
+.tooltip .arrow {
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 5px;
+}
+
+.tooltip .arrow::before {
+  position: absolute;
+  content: "";
+  border-style: solid;
+  border-color: transparent;
+}
+
+.bs-tooltip-top .arrow {
+  bottom: 0;
+}
+
+.bs-tooltip-top .arrow::before {
+  top: 0;
+  border-width: 5px 5px 0;
+  border-top-color: var(--color-text);
+}
+
+.bs-tooltip-bottom .arrow {
+  top: 0;
+}
+
+.bs-tooltip-bottom .arrow::before {
+  bottom: 0;
+  border-width: 0 5px 5px;
+  border-bottom-color: var(--color-text);
+}
+
+.bs-tooltip-left .arrow {
+  right: 0;
+  width: 5px;
+  height: 10px;
+}
+
+.bs-tooltip-left .arrow::before {
+  left: 0;
+  border-width: 5px 0 5px 5px;
+  border-left-color: var(--color-text);
+}
+
+.bs-tooltip-right .arrow {
+  left: 0;
+  width: 5px;
+  height: 10px;
+}
+
+.bs-tooltip-right .arrow::before {
+  right: 0;
+  border-width: 5px 5px 5px 0;
+  border-right-color: var(--color-text);
 }

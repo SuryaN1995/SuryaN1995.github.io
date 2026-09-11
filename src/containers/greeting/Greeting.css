@@ -1,53 +1,89 @@
 .main {
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 4rem;
-}
-.greet-main {
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
+  width: 100%;
+  max-width: var(--container-wide);
+  padding: 0 var(--space-6);
+  margin: 0 auto;
 }
 
-.gretting-main {
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
+.greet-main {
+  position: relative;
+  width: 100%;
+  max-width: var(--container-wide);
+  padding: 0 var(--space-6);
+  margin: 0 auto;
+}
+
+/* Soft ambient wash behind the hero so the page doesn't start on flat colour. */
+.greet-main::before {
+  content: "";
+  position: absolute;
+  top: -18%;
+  right: -6%;
+  width: 46rem;
+  height: 46rem;
+  max-width: 80vw;
+  max-height: 80vw;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(var(--color-accent-rgb), 0.16) 0%,
+    rgba(var(--color-accent-rgb), 0) 68%
+  );
+  pointer-events: none;
+  z-index: -1;
 }
 
 .greeting-main {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+  gap: var(--space-8);
+  min-height: min(82vh, 760px);
+  padding: var(--space-7) 0;
 }
 
-.greeting-main > * {
-  flex: 1;
-  margin-bottom: 30px;
-}
-.button-greeting-div {
+.greeting-text-div {
   display: flex;
-  margin-top: 20px;
-}
-
-.greeting-text {
-  margin-top: 80px;
-  font-size: 70px;
-  line-height: 1.1;
-  font-family: "Google Sans Bold";
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .greeting-nickname {
-  font-size: 30px;
-  line-height: 0px;
-  font-family: "Google Sans Bold Italic";
+  display: inline-block;
+  margin-bottom: var(--space-4);
+  padding: 7px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: rgba(var(--color-accent-rgb), 0.1);
+  color: var(--color-muted);
+  font-family: "Google Sans Medium", inherit;
+  font-size: var(--text-sm);
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+}
+
+.greeting-text {
+  margin: 0;
+  font-family: "Google Sans Bold", inherit;
+  font-size: var(--text-4xl);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
 }
 
 .greeting-text-p {
-  font-size: 40px;
-  line-height: 40px;
-  margin-right: 40px;
-  font-family: "Google Sans Medium";
+  max-width: 52ch;
+  margin: var(--space-5) 0 0;
+  color: var(--color-muted);
+  font-family: "Google Sans Regular", inherit;
+  font-size: var(--text-lg);
+  line-height: 1.65;
+}
+
+.greeting-image-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .greeting-image-div > * {
@@ -55,41 +91,51 @@
   height: auto;
 }
 
-/* Media Query */
-@media (max-width: 1380px) {
-  .greeting-text {
-    font-size: 50px;
+.button-greeting-div {
+  display: flex;
+  margin-top: var(--space-5);
+}
+
+.portfolio-repo-btn-div {
+  margin-top: var(--space-6);
+}
+
+@media (max-width: 1024px) {
+  .greeting-main {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    min-height: 0;
+    text-align: center;
   }
+
+  .greeting-text-div {
+    align-items: center;
+    order: 2;
+  }
+
+  .greeting-image-div {
+    order: 1;
+  }
+
   .greeting-text-p {
-    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
+
 @media (max-width: 768px) {
-  .button-greeting-div {
-    justify-content: space-around;
+  .greet-main,
+  .main {
+    padding: 0 var(--space-4);
   }
-  .greeting-text {
-    font-size: 30px;
-    margin-top: 0px;
-    text-align: center;
-  }
-  .greeting-nickname {
-    font-size: 25px;
-    text-align: center;
-  }
-  .greeting-text-p {
-    font-size: 16px;
-    margin-right: 0px;
-    line-height: normal;
-    text-align: center;
-  }
+
   .greeting-main {
-    display: block;
+    padding: var(--space-5) 0;
   }
 
   .portfolio-repo-btn-div {
-    width: 100%;
     display: flex;
     justify-content: center;
+    width: 100%;
   }
 }

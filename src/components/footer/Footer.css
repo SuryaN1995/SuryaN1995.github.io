@@ -1,10 +1,103 @@
-.footer-text {
-  text-align: center;
-  /* color: #868e96; */
-  font-weight: bold;
-  font-family: "Google Sans Regular";
+/* The floating "back to top" button is fixed to the bottom-right corner, so
+   the footer reserves its footprint to keep the credit line clear of it. */
+.site-footer {
+  --top-button-clearance: calc(46px + var(--space-5) * 2);
+
+  position: relative;
+  padding: 0 var(--space-6);
+  margin-top: var(--space-9);
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(var(--color-text-rgb), 0.025) 100%
+  );
 }
 
-.footer-div {
-  margin-top: 2rem;
+/* A hairline that fades out at both ends, instead of a hard rule edge to edge. */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-border) 20%,
+    var(--color-border) 80%,
+    transparent 100%
+  );
+}
+
+.site-footer__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  max-width: var(--container-wide);
+  padding: var(--space-6) 0 var(--top-button-clearance);
+  margin: 0 auto;
+}
+
+.site-footer__contact {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4) var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: "Google Sans Medium", inherit;
+  font-size: var(--text-sm);
+  text-decoration: none;
+  transition: transform var(--dur) var(--ease-out),
+    border-color var(--dur) var(--ease-out),
+    box-shadow var(--dur) var(--ease-out);
+}
+
+.site-footer__contact i {
+  color: var(--color-accent);
+  font-size: 0.9em;
+}
+
+.site-footer__contact:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.site-footer__legal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  text-align: right;
+}
+
+.site-footer__copy,
+.site-footer__made {
+  margin: 0;
+  color: var(--color-muted);
+  font-family: "Google Sans Regular", inherit;
+  font-size: var(--text-xs);
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+    padding: 0 var(--space-4);
+  }
+
+  .site-footer__bar {
+    flex-direction: column;
+    gap: var(--space-3);
+    padding-top: var(--space-5);
+  }
+
+  .site-footer__legal {
+    align-items: center;
+    text-align: center;
+  }
 }

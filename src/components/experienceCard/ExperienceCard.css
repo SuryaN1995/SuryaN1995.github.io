@@ -1,122 +1,22 @@
-.experience-main {
-  width: 100%;
-}
-
-.basic-experience {
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
-.experience-heading-div {
-  display: flex;
-}
-
-.experience-heading-div > * {
-  flex: 1;
-}
-
-.experience-heading-img-div {
+.experience-list-item {
+  --timeline-gap: 28px;
+  --timeline-column: 40px;
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-
-.experience-heading-text-div {
-  text-align: center;
-}
-
-.experience-heading-img-div > * {
-  max-width: 100%;
-  height: auto;
-}
-
-.experience-heading-text {
-  font-size: 56px;
-  font-weight: 400;
-  font-family: "Google Sans Medium";
-  line-height: 1.1;
-  text-align: center;
-  margin-top: 80px;
-}
-
-.experience-heading-sub-text {
-  font-size: 30px;
-  font-family: "Google Sans Regular";
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.experience-header-detail-text {
-  font-size: 20px;
-  line-height: 30px;
-  margin-top: 0px;
-  margin-left: 20px;
-  margin-right: 20px;
-  font-family: "Google Sans Medium";
-}
-
-@media (max-width: 1380px) {
-  .experience-heading-text {
-    font-size: 50px;
-    margin-top: 80px;
-  }
-  .experience-heading-sub-text {
-    font-size: 25px;
-  }
-}
-
-@media (max-width: 768px) {
-  .experience-heading-text {
-    font-size: 30px;
-    margin-top: 20px;
-  }
-
-  .experience-heading-sub-text {
-    font-size: 20px;
-  }
-
-  .experience-heading-div {
-    flex-direction: column;
-  }
-
-  .experience-header-detail-text {
-    font-size: 16px;
-    margin-right: 0px;
-    line-height: normal;
-    text-align: center;
-  }
-}
-
-.experience-card {
-  flex: 1;
-  min-width: 0;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  -webkit-box-shadow: 4px 3px 20px -2px grey;
-  -moz-box-shadow: 4px 3px 20px -2px grey;
-  box-shadow: 4px 3px 20px -2px grey;
-}
-
-.experience-card-wrapper {
-  display: flex;
   flex-direction: row;
-  align-items: center;
-  width: 100%;
-}
-
-.arrow-left {
-  flex: none;
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  z-index: 10;
+  padding: var(--timeline-gap) 0;
 }
 
 .experience-card-logo-div {
-  margin: 0 10px;
+  margin: 0 var(--space-4) 0 0;
+}
+
+.experience-card-logo {
+  display: block;
+  width: 92px;
+  height: 92px;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-md);
 }
 
 /* The rail spans the full row including its vertical padding, so consecutive
@@ -150,49 +50,68 @@
 
 .experience-card-stepper-dot {
   position: relative;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
+}
+
+.experience-card-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.arrow-left {
+  flex: none;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid var(--color-surface);
+  z-index: 10;
+}
+
+.experience-card {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--dur) var(--ease-out),
+    box-shadow var(--dur) var(--ease-out);
+}
+
+.experience-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
 }
 
 .experience-card-header-div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 10px;
-}
-
-.experience-card-logo {
-  display: block;
-  width: 100px;
-  height: 100px;
-  -webkit-box-shadow: 4px 3px 20px -2px grey;
-  -moz-box-shadow: 4px 3px 20px -2px grey;
-  box-shadow: 4px 3px 20px -2px grey;
-  border-radius: 50px;
+  gap: var(--space-4);
 }
 
 .experience-card-title {
-  font-family: "Google Sans Regular";
-  margin-top: 10px;
-  margin-bottom: 2px;
-  margin-left: 0px;
-  margin-right: 7px;
+  margin: 0 var(--space-2) var(--space-1) 0;
+  font-family: "Google Sans Medium", inherit;
+  font-size: var(--text-lg);
+  line-height: 1.3;
   text-align: left;
 }
 
 .experience-card-company {
-  font-family: "Google Sans Regular";
   margin: 0;
+  font-family: "Google Sans Regular", inherit;
+  font-size: var(--text-base);
   text-align: left;
-}
-
-.experience-card-duration {
-  font-family: "Google Sans Regular";
-  margin-top: 10px;
-  margin-bottom: 2px;
-  text-align: right;
-  white-space: nowrap;
 }
 
 .experience-card-heading-right {
@@ -200,16 +119,29 @@
   margin-left: auto;
 }
 
+.experience-card-duration {
+  margin: 0 0 var(--space-1);
+  color: var(--color-muted);
+  font-family: "Google Sans Regular", inherit;
+  font-size: var(--text-sm);
+  text-align: right;
+  white-space: nowrap;
+}
+
 .experience-card-location {
-  font-family: "Google Sans Regular";
   margin: 0;
+  color: var(--color-muted);
+  font-family: "Google Sans Regular", inherit;
+  font-size: var(--text-sm);
   text-align: right;
 }
 
 .experience-card-description {
-  margin: 20px 0 5px;
-  text-align: justify;
-  font-family: "Google Sans Regular";
+  margin: var(--space-4) 0 0;
+  font-family: "Google Sans Regular", inherit;
+  font-size: var(--text-sm);
+  line-height: 1.75;
+  text-align: left;
 }
 
 .experience-card-company > a {
@@ -228,7 +160,7 @@
   background-color: currentColor;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.3s ease-in-out;
+  transition: transform var(--dur) var(--ease-out);
 }
 
 .experience-card-company > a:hover:before,
@@ -236,17 +168,9 @@
   transform: scaleX(1);
 }
 
-.experience-list-item {
-  --timeline-gap: 28px;
-  --timeline-column: 40px;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  padding: var(--timeline-gap) 0;
-}
-
 @media (max-width: 768px) {
   .experience-card {
+    padding: var(--space-4);
     text-align: center;
   }
 
@@ -257,11 +181,11 @@
 
   .experience-list-item {
     flex-direction: column;
-    padding: 20px 0;
+    padding: var(--space-4) 0;
   }
 
   .experience-card-logo-div {
-    margin: 0 0 10px;
+    margin: 0 0 var(--space-3);
   }
 
   .experience-card-header-div {
@@ -281,7 +205,6 @@
   }
 
   .experience-card-description {
-    margin: 14px 0 5px;
     text-align: left;
   }
 }

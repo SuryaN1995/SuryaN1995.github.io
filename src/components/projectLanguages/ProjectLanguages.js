@@ -14,7 +14,9 @@ class ProjectLanguages extends Component {
                   key={logo.name}
                   placement={"top"}
                   overlay={
-                    <Tooltip id={`tooltip-top`}>
+                    <Tooltip
+                      id={`tooltip-language-${logo.name.replace(/\s+/g, "-")}`}
+                    >
                       <strong>{logo.name}</strong>
                     </Tooltip>
                   }

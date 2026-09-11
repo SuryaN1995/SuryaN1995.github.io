@@ -15,11 +15,6 @@ class DegreeCard extends Component {
               style={{ backgroundColor: theme.imageHighlight }}
             >
               <img
-                style={{
-                  maxWidth: "100%",
-                  maxHeight: "100%",
-                  transform: "scale(0.9)",
-                }}
                 src={require(`../../assets/images/${degree.logo_path}`)}
                 alt={degree.alt_name}
               />
@@ -31,45 +26,30 @@ class DegreeCard extends Component {
             className="card-body"
             style={{ width: degree.logo_path ? "90%" : "100%" }}
           >
-            <div
-              className="body-header"
-              style={{ backgroundColor: theme.headerColor }}
-            >
+            <div className="body-header">
               <div className="body-header-title">
-                <h2 className="card-title" style={{ color: theme.text }}>
-                  {degree.title}
-                </h2>
-                <h3 className="card-subtitle" style={{ color: theme.text }}>
-                  {degree.subtitle}
-                </h3>
+                <h2 className="card-title">{degree.title}</h2>
+                <h3 className="card-subtitle">{degree.subtitle}</h3>
               </div>
               <div className="body-header-duration">
-                <h3 className="duration" style={{ color: theme.text }}>
-                  {degree.duration}
-                </h3>
+                <h3 className="duration">{degree.duration}</h3>
+                {degree.gpa && <p className="degree-gpa">{degree.gpa}</p>}
               </div>
             </div>
             <div className="body-content">
-              {degree.descriptions.map((sentence) => {
-                return (
-                  <p className="content-list" style={{ color: theme.text }}>
-                    {sentence}
-                  </p>
-                );
-              })}
+              {degree.descriptions.map((sentence, index) => (
+                <p className="content-list" key={index}>
+                  {sentence}
+                </p>
+              ))}
               {degree.website_link && (
                 <a
                   href={degree.website_link}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <div
-                    className="visit-btn"
-                    style={{ backgroundColor: theme.headerColor }}
-                  >
-                    <p className="btn" style={{ color: theme.text }}>
-                      Visit Website
-                    </p>
+                  <div className="visit-btn">
+                    <p className="btn">Visit Website</p>
                   </div>
                 </a>
               )}

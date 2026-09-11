@@ -3,16 +3,18 @@
 }
 
 .basic-experience {
-  margin-left: 5%;
-  margin-right: 5%;
+  width: 100%;
+  max-width: var(--container-wide);
+  padding: 0 var(--space-6);
+  margin: 0 auto;
 }
 
 .experience-heading-div {
-  display: flex;
-}
-
-.experience-heading-div > * {
-  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--space-7);
+  padding: var(--space-7) 0 var(--space-6);
 }
 
 .experience-heading-img-div {
@@ -21,68 +23,64 @@
   justify-content: center;
 }
 
-.experience-heading-text-div {
-  text-align: center;
-}
-
 .experience-heading-img-div > * {
   max-width: 100%;
   height: auto;
 }
 
+.experience-heading-text-div {
+  text-align: left;
+}
+
 .experience-heading-text {
-  font-size: 56px;
-  font-weight: 400;
-  font-family: "Google Sans Medium";
-  line-height: 1.1;
-  text-align: center;
-  margin-top: 80px;
+  margin: 0;
+  font-family: "Google Sans Bold", inherit;
+  font-size: var(--text-3xl);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
 }
 
 .experience-heading-sub-text {
-  font-size: 30px;
-  font-family: "Google Sans Regular";
-  text-align: center;
-  margin-bottom: 10px;
+  margin: var(--space-3) 0 0;
+  color: var(--color-text);
+  font-family: "Google Sans Regular", inherit;
+  font-size: var(--text-xl);
+  font-weight: 400;
 }
 
 .experience-header-detail-text {
-  font-size: 20px;
-  line-height: 30px;
-  margin-top: 0px;
-  margin-left: 20px;
-  margin-right: 20px;
-  font-family: "Google Sans Medium";
+  max-width: 60ch;
+  margin: var(--space-4) 0 0;
+  color: var(--color-muted);
+  font-family: "Google Sans Regular", inherit;
+  font-size: var(--text-base);
+  line-height: 1.7;
 }
 
-@media (max-width: 1380px) {
-  .experience-heading-text {
-    font-size: 50px;
-    margin-top: 80px;
+@media (max-width: 1024px) {
+  .experience-heading-div {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
   }
-  .experience-heading-sub-text {
-    font-size: 25px;
+
+  .experience-heading-text-div {
+    text-align: center;
+  }
+
+  .experience-header-detail-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .experience-heading-img-div {
+    max-width: 420px;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 768px) {
-  .experience-heading-text {
-    font-size: 30px;
-    margin-top: 20px;
-  }
-
-  .experience-heading-sub-text {
-    font-size: 20px;
-  }
-
-  .experience-heading-div {
-    flex-direction: column;
-  }
-
-  .experience-header-detail-text {
-    font-size: 16px;
-    margin-right: 0px;
-    line-height: normal;
-    text-align: center;
+  .basic-experience {
+    padding: 0 var(--space-4);
   }
 }

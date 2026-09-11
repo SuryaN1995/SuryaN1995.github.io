@@ -14,7 +14,9 @@ class CompetitiveSites extends React.Component {
                 placement={"top"}
                 style={{ marginBottom: "5px" }}
                 overlay={
-                  <Tooltip id={`tooltip-top`}>
+                  <Tooltip
+                    id={`tooltip-site-${logo.siteName.replace(/\s+/g, "-")}`}
+                  >
                     <strong>{logo.siteName}</strong>
                   </Tooltip>
                 }

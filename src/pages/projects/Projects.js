@@ -29,16 +29,10 @@ class Projects extends Component {
                 <ProjectsImg theme={theme} />
               </div>
               <div className="projects-heading-text-div">
-                <h1
-                  className="projects-heading-text"
-                  style={{ color: theme.text }}
-                >
+                <h1 className="projects-heading-text">
                   {projectsHeader.title}
                 </h1>
-                <p
-                  className="projects-header-detail-text subTitle"
-                  style={{ color: theme.secondaryText }}
-                >
+                <p className="projects-header-detail-text subTitle">
                   {projectsHeader["description"]}
                 </p>
               </div>
@@ -47,7 +41,7 @@ class Projects extends Component {
         </div>
         <div className="repo-cards-div-main">
           {ProjectsData.data.map((repo) => {
-            return <GithubRepoCard key={repo.id} repo={repo} theme={theme} />;
+            return <GithubRepoCard key={repo.id} repo={repo} />;
           })}
         </div>
         <Button
@@ -63,16 +57,10 @@ class Projects extends Component {
             <Fade bottom duration={2000} distance="40px">
               <div className="publications-heading-div">
                 <div className="publications-heading-text-div">
-                  <h1
-                    className="publications-heading-text"
-                    style={{ color: theme.text }}
-                  >
+                  <h1 className="publications-heading-text">
                     {publicationsHeader.title}
                   </h1>
-                  <p
-                    className="projects-header-detail-text subTitle"
-                    style={{ color: theme.secondaryText }}
-                  >
+                  <p className="projects-header-detail-text subTitle">
                     {publicationsHeader["description"]}
                   </p>
                 </div>
@@ -83,7 +71,7 @@ class Projects extends Component {
 
         <div className="repo-cards-div-main">
           {publications.data.map((pub) => {
-            return <PublicationCard key={pub.id} pub={pub} theme={theme} />;
+            return <PublicationCard key={pub.id} pub={pub} />;
           })}
         </div>
 

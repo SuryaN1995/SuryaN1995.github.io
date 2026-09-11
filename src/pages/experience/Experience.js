@@ -21,22 +21,11 @@ class Experience extends Component {
                 <ExperienceImg theme={theme} />
               </div>
               <div className="experience-heading-text-div">
-                <h1
-                  className="experience-heading-text"
-                  style={{ color: theme.text }}
-                >
-                  {experience.title}
-                </h1>
-                <h3
-                  className="experience-heading-sub-text"
-                  style={{ color: theme.text }}
-                >
+                <h1 className="experience-heading-text">{experience.title}</h1>
+                <h3 className="experience-heading-sub-text">
                   {experience["subtitle"]}
                 </h3>
-                <p
-                  className="experience-header-detail-text subTitle"
-                  style={{ color: theme.secondaryText }}
-                >
+                <p className="experience-header-detail-text subTitle">
                   {experience["description"]}
                 </p>
               </div>

@@ -31,16 +31,8 @@ class Contact extends Component {
                 />
               </div>
               <div className="contact-heading-text-div">
-                <h1
-                  className="contact-heading-text"
-                  style={{ color: theme.text }}
-                >
-                  {ContactData["title"]}
-                </h1>
-                <p
-                  className="contact-header-detail-text subTitle"
-                  style={{ color: theme.secondaryText }}
-                >
+                <h1 className="contact-heading-text">{ContactData["title"]}</h1>
+                <p className="contact-header-detail-text subTitle">
                   {ContactData["description"]}
                 </p>
                 <SocialMedia theme={theme} />
@@ -49,7 +41,6 @@ class Contact extends Component {
                     text="See My Resume"
                     newTab={true}
                     href={greeting.resumeLink}
-                    theme={theme}
                   />
                 </div>
               </div>
@@ -58,13 +49,8 @@ class Contact extends Component {
           <Fade bottom duration={1000} distance="40px">
             <div className="blog-heading-div">
               <div className="blog-heading-text-div">
-                <h1 className="blog-heading-text" style={{ color: theme.text }}>
-                  {blogSection["title"]}
-                </h1>
-                <p
-                  className="blog-header-detail-text subTitle"
-                  style={{ color: theme.secondaryText }}
-                >
+                <h1 className="blog-heading-text">{blogSection["title"]}</h1>
+                <p className="blog-header-detail-text subTitle">
                   {blogSection["subtitle"]}
                 </p>
                 <div className="blogsite-btn-div">
@@ -72,7 +58,6 @@ class Contact extends Component {
                     text="Visit My Blogsite"
                     newTab={true}
                     href={blogSection.link}
-                    theme={theme}
                   />
                 </div>
               </div>
@@ -87,30 +72,18 @@ class Contact extends Component {
                 <AddressImg theme={theme} />
               </div>
               <div className="address-heading-text-div">
-                <h1
-                  className="address-heading-text"
-                  style={{ color: theme.text }}
-                >
+                <h1 className="address-heading-text">
                   {addressSection["title"]}
                 </h1>
-                <p
-                  className="contact-header-detail-text subTitle"
-                  style={{ color: theme.secondaryText }}
-                >
+                <p className="contact-header-detail-text subTitle">
                   {addressSection["subtitle"]}
                 </p>
                 {phoneSection.title ? (
                   <>
-                    <h1
-                      className="address-heading-text"
-                      style={{ color: theme.text }}
-                    >
+                    <h1 className="address-heading-text">
                       {phoneSection["title"]}
                     </h1>
-                    <p
-                      className="contact-header-detail-text subTitle"
-                      style={{ color: theme.secondaryText }}
-                    >
+                    <p className="contact-header-detail-text subTitle">
                       {phoneSection["subtitle"]}
                     </p>
                   </>
@@ -121,7 +94,6 @@ class Contact extends Component {
                       text="Visit on Google Maps"
                       newTab={true}
                       href={addressSection.location_map_link}
-                      theme={theme}
                     />
                   </div>
                 )}

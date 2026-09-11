@@ -1,43 +1,69 @@
 .main-button {
-  background-color: #55198b;
-  border: solid 1px #55198b;
-  color: white;
-  font-weight: 500;
-  line-height: 1.1;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
   width: max-content;
-  padding: 13px 22px;
-  margin-right: 0px;
-  /* text-transform: uppercase; */
-  border-radius: 6px;
+  padding: 14px 26px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-family: "Google Sans Medium", inherit;
+  font-size: var(--text-base);
+  line-height: 1;
+  letter-spacing: 0.01em;
   text-align: center;
   text-decoration: none;
-  font-family: "Google Sans Regular";
-  display: block;
-  margin-top: 20px;
-  font-size: 18px;
   cursor: pointer;
-  letter-spacing: 2px;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--dur) var(--ease-out),
+    box-shadow var(--dur) var(--ease-out),
+    background-color var(--dur) var(--ease-out),
+    color var(--dur) var(--ease-out);
 }
+
 .main-button:hover {
-  /* background-color: #ffffff; */
-  /* color: black; */
-  transition: ease-in 0.3s;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
+
+.main-button:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.main-button-arrow {
+  flex: none;
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.main-button:hover .main-button-arrow {
+  transform: translateX(3px);
+}
+
+/* Secondary treatment: reads as an outline until hovered. */
+.main-button--ghost {
+  background: transparent;
+  color: var(--color-text);
+  border-color: var(--color-border);
+  box-shadow: none;
+}
+
+.main-button--ghost:hover {
+  background: var(--color-surface-raised);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
 .project-button {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: var(--space-5);
 }
-/* Media Query */
+
 @media (max-width: 768px) {
   .main-button {
-    font-size: 15px;
-    padding: 12px 18px;
-    margin-right: 0px;
-  }
-}
-@media (max-width: 320px) {
-  .main-button {
-    font-size: 12px;
+    padding: 12px 22px;
+    font-size: var(--text-sm);
   }
 }
