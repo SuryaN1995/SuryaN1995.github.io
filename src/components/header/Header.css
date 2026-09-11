@@ -44,16 +44,6 @@
   cursor: pointer;
 }
 
-.header .theme {
-  border-radius: 8px;
-  padding: 10px;
-  list-style: none;
-  position: absolute;
-  cursor: pointer;
-  margin-top: 4px;
-  margin-right: 20px;
-}
-
 .header li a:hover,
 .header .menu-btn:hover {
   /* background-color: #A6E1FA; */

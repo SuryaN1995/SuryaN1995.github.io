@@ -77,10 +77,6 @@ class Contact extends Component {
                 </div>
               </div>
               <div className="blog-heading-img-div">
-                {/* <img
-											src={require(`../../assets/images/${blogSection["avatar_image_path"]}`)}
-											alt=""
-										/> */}
                 <BlogsImg theme={theme} />
               </div>
             </div>
@@ -88,10 +84,6 @@ class Contact extends Component {
           <Fade bottom duration={1000} distance="40px">
             <div className="address-heading-div">
               <div className="contact-heading-img-div">
-                {/* <img
-											src={require(`../../assets/images/${addressSection["avatar_image_path"]}`)}
-											alt=""
-										/> */}
                 <AddressImg theme={theme} />
               </div>
               <div className="address-heading-text-div">
@@ -107,18 +99,22 @@ class Contact extends Component {
                 >
                   {addressSection["subtitle"]}
                 </p>
-                <h1
-                  className="address-heading-text"
-                  style={{ color: theme.text }}
-                >
-                  {phoneSection["title"]}
-                </h1>
-                <p
-                  className="contact-header-detail-text subTitle"
-                  style={{ color: theme.secondaryText }}
-                >
-                  {phoneSection["subtitle"]}
-                </p>
+                {phoneSection.title ? (
+                  <>
+                    <h1
+                      className="address-heading-text"
+                      style={{ color: theme.text }}
+                    >
+                      {phoneSection["title"]}
+                    </h1>
+                    <p
+                      className="contact-header-detail-text subTitle"
+                      style={{ color: theme.secondaryText }}
+                    >
+                      {phoneSection["subtitle"]}
+                    </p>
+                  </>
+                ) : null}
                 {addressSection.location_map_link && (
                   <div className="address-btn-div">
                     <Button
@@ -133,7 +129,7 @@ class Contact extends Component {
             </div>
           </Fade>
         </div>
-        <Footer theme={this.props.theme} onToggle={this.props.onToggle} />
+        <Footer theme={this.props.theme} />
         <TopButton theme={this.props.theme} />
       </div>
     );

@@ -4,63 +4,49 @@ import { Fade } from "react-reveal";
 
 class ExperienceCard extends Component {
   render() {
-    const experience = this.props.experience;
-    const index = this.props.index;
-    const totalCards = this.props.totalCards;
-    const theme = this.props.theme;
+    const { experience, index, totalCards, theme } = this.props;
+    const isFirst = index === 0;
+    const isLast = index === totalCards - 1;
+
     return (
       <div
-        className="experience-list-item"
-        style={{ marginTop: index === 0 ? 30 : 50 }}
+        className={`experience-list-item${
+          isFirst ? " experience-list-item--first" : ""
+        }${isLast ? " experience-list-item--last" : ""}`}
       >
         <Fade left duration={2000} distance="40px">
           <div className="experience-card-logo-div">
             <img
               className="experience-card-logo"
               src={require(`../../assets/images/${experience["logo_path"]}`)}
-              alt=""
+              alt={`${experience["company"]} logo`}
             />
           </div>
         </Fade>
-        <div className="experience-card-stepper">
-          <div
+        <div className="experience-card-stepper" aria-hidden="true">
+          <span
+            className="experience-card-stepper-rail"
+            style={{ backgroundColor: theme.headerColor }}
+          />
+          <span
+            className="experience-card-stepper-dot"
             style={{
-              width: 20,
-              height: 20,
-              backgroundColor: `${theme.headerColor}`,
-              borderRadius: 50,
-              zIndex: 10,
+              backgroundColor: theme.headerColor,
+              boxShadow: `0 0 0 4px ${theme.body}`,
             }}
           />
-          {index !== totalCards - 1 && (
-            <div
-              style={{
-                height: 190,
-                width: 2,
-                backgroundColor: `${theme.headerColor}`,
-                position: "absolute",
-                marginTop: 20,
-              }}
-            />
-          )}
         </div>
         <Fade right duration={2000} distance="40px">
-          <div style={{ display: "flex", flexDirection: "row" }}>
+          <div className="experience-card-wrapper">
             <div
               className="arrow-left"
               style={{ borderRight: `10px solid ${theme.body}` }}
-            ></div>
+            />
             <div
               className="experience-card"
               style={{ background: `${theme.body}` }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                }}
-              >
+              <div className="experience-card-header-div">
                 <div>
                   <h3
                     className="experience-card-title"
@@ -81,33 +67,27 @@ class ExperienceCard extends Component {
                     </a>
                   </p>
                 </div>
-                <div>
-                  <div className="experience-card-heading-right">
-                    <p
-                      className="experience-card-duration"
-                      style={{ color: theme.secondaryText }}
-                    >
-                      {experience["duration"]}
-                    </p>
-                    <p
-                      className="experience-card-location"
-                      style={{ color: theme.secondaryText }}
-                    >
-                      {experience["location"]}
-                    </p>
-                  </div>
+                <div className="experience-card-heading-right">
+                  <p
+                    className="experience-card-duration"
+                    style={{ color: theme.secondaryText }}
+                  >
+                    {experience["duration"]}
+                  </p>
+                  <p
+                    className="experience-card-location"
+                    style={{ color: theme.secondaryText }}
+                  >
+                    {experience["location"]}
+                  </p>
                 </div>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "flex-start",
-                  marginTop: 20,
-                }}
+              <p
+                className="experience-card-description"
+                style={{ color: theme.text }}
               >
-                <div className="repo-description" />
                 {experience["description"]}
-              </div>
+              </p>
             </div>
           </div>
         </Fade>

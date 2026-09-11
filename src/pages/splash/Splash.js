@@ -25,7 +25,7 @@ class Splash extends Component {
     this.id = setTimeout(() => this.setState({ redirect: true }), 2800);
   }
 
-  componentWillMount() {
+  componentWillUnmount() {
     clearTimeout(this.id);
   }
 

@@ -1,9 +1,4 @@
 @font-face {
-  font-family: "Corinthia Regular";
-  src: local("Corinthia Regular"),
-    url("./assets/fonts/Corinthia-Regular.ttf") format("woff");
-}
-@font-face {
   font-family: "Corinthia Bold";
   src: local("Corinthia Bold"),
     url("./assets/fonts/Corinthia-Bold.ttf") format("woff");
@@ -24,19 +19,9 @@
     url("./assets/fonts/GoogleSans-BoldItalic.ttf") format("woff");
 }
 @font-face {
-  font-family: "Google Sans Italic";
-  src: local("Google Sans Italic"),
-    url("./assets/fonts/GoogleSans-Italic.ttf") format("woff");
-}
-@font-face {
   font-family: "Google Sans Medium";
   src: local("Google Sans Medium"),
     url("./assets/fonts/GoogleSans-Medium.ttf") format("woff");
-}
-@font-face {
-  font-family: "Google Sans Medium Italic";
-  src: local("Google Sans Medium Italic"),
-    url("./assets/fonts/GoogleSans-MediumItalic.ttf") format("woff");
 }
 @font-face {
   font-family: "Google Sans Regular";

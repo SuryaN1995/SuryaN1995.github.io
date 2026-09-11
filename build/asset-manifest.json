@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "./static/css/main.425a15df.chunk.css",
+    "main.js": "./static/js/main.5139f25d.chunk.js",
+    "main.js.map": "./static/js/main.5139f25d.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.87e10717.js",
+    "runtime-main.js.map": "./static/js/runtime-main.87e10717.js.map",
+    "static/js/2.25ac56e8.chunk.js": "./static/js/2.25ac56e8.chunk.js",
+    "static/js/2.25ac56e8.chunk.js.map": "./static/js/2.25ac56e8.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.797867f31f4899bad6c14b0a31ef3bf9.js": "./precache-manifest.797867f31f4899bad6c14b0a31ef3bf9.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.425a15df.chunk.css.map": "./static/css/main.425a15df.chunk.css.map",
+    "static/media/index.css": "./static/media/Montserrat-Regular.ee653992.ttf",
+    "static/media/airtel_logo.svg": "./static/media/airtel_logo.dff4a311.svg",
+    "static/media/datamatics_logo.svg": "./static/media/datamatics_logo.5119dcec.svg",
+    "static/media/deeplearning_ai_logo.png": "./static/media/deeplearning_ai_logo.75a7107b.png",
+    "static/media/ibm_logo.png": "./static/media/ibm_logo.d3fccbe1.png",
+    "static/media/meta_logo.png": "./static/media/meta_logo.bdd97d28.png",
+    "static/media/procore_logo.svg": "./static/media/procore_logo.fc6a38f5.svg",
+    "static/media/surya_logo.png": "./static/media/surya_logo.237df44b.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.87e10717.js",
+    "static/js/2.25ac56e8.chunk.js",
+    "static/css/main.425a15df.chunk.css",
+    "static/js/main.5139f25d.chunk.js"
+  ]
+}

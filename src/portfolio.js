@@ -25,7 +25,7 @@ const greeting = {
   subTitle:
     "A passionate individual who always thrives to work on end to end products which develop sustainable and scalable social and technical systems to create impact.",
   resumeLink:
-    "https://drive.google.com/file/d/1iYXCIg2OR1PH9wcviHw5orPr-odlwiJG/view?usp=sharing",
+    "https://drive.google.com/file/d/1LyENq2R_Vb2vN_BulAXMeyc-6IXl5EAi/view?usp=sharing",
   githubProfile: "https://github.com/SuryaN1995",
 };
 
@@ -41,15 +41,9 @@ const socialMediaLinks = [
   {
     name: "LinkedIn",
     link: "https://www.linkedin.com/in/surya-n/",
-    fontAwesomeIcon: "fa-linkedin-in", // Reference https://fontawesome.com/icons/linkedin-in?style=brands
-    backgroundColor: "#0077B5", // Reference https://simpleicons.org/?q=linkedin
+    fontAwesomeIcon: "fa-linkedin-in",
+    backgroundColor: "#0077B5",
   },
-  // {
-  //   name: "YouTube",
-  //   link: "https://youtube.com/c/DevSense19",
-  //   fontAwesomeIcon: "fa-youtube", // Reference https://fontawesome.com/icons/youtube?style=brands
-  //   backgroundColor: "#FF0000", // Reference https://simpleicons.org/?q=youtube
-  // },
   {
     name: "Gmail",
     link: "mailto:surya.n1447@gmail.com",
@@ -332,15 +326,7 @@ const competitiveSites = {
         color: "#5B4638",
       },
       profileLink: "https://www.codechef.com/users/surya_n1447",
-    } /*,
-    {
-      siteName: "Codeforces",
-      iconifyClassname: "simple-icons:codeforces",
-      style: {
-        color: "#1F8ACB",
-      },
-      profileLink: "http://codeforces.com/profile/layman_brother",
-    }, */,
+    },
     {
       siteName: "Hackerearth",
       iconifyClassname: "simple-icons:hackerearth",
@@ -374,19 +360,6 @@ const degrees = {
       ],
       website_link: "http://vidyavikasengineering.com/",
     },
-    // {
-    //   title: "Indiana University Bloomington",
-    //   subtitle: "M.S. in Computer Science",
-    //   logo_path: "iu_logo.png",
-    //   alt_name: "Indiana University Bloomington",
-    //   duration: "2021 - 2023",
-    //   descriptions: [
-    //     "⚡ I have taken varity of courses related to Artificial Intelligence which correspond to Explainable AI, Graph Machine Learning, Computer Vision etc.",
-    //     "⚡ Apart from this, I have also done research assistantship. As part of it, I have worked on creating new algorithms in Graph ML and Network Science.",
-    //     "⚡ During my time at university, I was also associated with multimedia department. As part of it, I have worked on some documentry films and interviews.",
-    //   ],
-    //   website_link: "https://www.indiana.edu/",
-    // },
   ],
 };
 
@@ -541,32 +514,42 @@ const experience = {
   subtitle: "Work, Internship and Volunteership",
   description:
     "I have worked with some well established companies mostly as DataScience, AI, ML and DL Developer and App Developer. I love attending organisation events and that is why I am also involved with many communities, hackathons and meetups.",
-  header_image_path: "experience.svg",
   sections: [
     {
       title: "Work",
       work: true,
       experiences: [
         {
-          title: "Machine Learning Engineer",
+          title: "Senior Engineer",
+          company: "Procore Technologies",
+          company_url: "https://www.procore.com/",
+          logo_path: "procore_logo.svg",
+          duration: "Aug 2025 - Present",
+          location: "Bengaluru, India",
+          description:
+            "Spearheaded the development of a hybrid GenAI and Machine Learning solution utilizing a Retrieval-Augmented Generation (RAG) architecture to deliver context-aware customer recommendations and identify alternative product applications, ultimately improving suggestion relevance by ~30%. The foundation of this system involved training a DeBERTa-based classification model alongside a semantic search pipeline—incorporating embeddings and a vector database—to extract and categorize alternate use cases from real-world projects, successfully reducing metric noise by 40%. To further enrich this knowledge base, predictive models using XGBoost and Logistic Regression were engineered to analyze structured datasets and classify high-probability alternative applications. By seamlessly integrating LLM-powered response generation with these multi-model ML outputs, the solution increased automated query resolution by ~35% and enabled much smarter cross-selling capabilities. Finally, optimizing the end-to-end pipeline to balance traditional ML inference with RAG scalability resulted in a ~25% improvement in overall response latency, facilitating faster and more accurate customer support decisions.",
+          color: "#000000",
+        },
+        {
+          title: "Senior Data Scientist",
           company: "Airtel Digital",
           company_url: "https://www.airtel.in/",
           logo_path: "airtel_logo.svg",
-          duration: "June 2024 - Present",
+          duration: "June 2024 - Aug 2025",
           location: "Bengaluru, India",
           description:
             "I worked on enhancing the model to efficiently handle customer-raised signal issues by aligning them with their corresponding band-based issue tagging. This improvement ensured more accurate categorization and resolution of customer concerns, ultimately streamlining the issue management process. Additionally, I contributed to digitalizing vendor invoices by leveraging the model to validate costs effectively. This automation not only reduced manual effort but also identified discrepancies, leading to significant cost savings for the company. The combined impact of these efforts resulted in improved operational efficiency, optimized resource allocation, and a measurable positive effect on the company’s overall performance.",
           color: "#000000",
         },
         {
-          title: "Lead App Developer",
+          title: "Lead Developer",
           company: "Airtel Digital",
           company_url: "https://www.airtel.in/",
           logo_path: "airtel_logo.svg",
           duration: "April 2020 - June 2024",
           location: "Bengaluru, Karnataka",
           description:
-            "Led a team in delivering a complex engineering project, completing it on time and within budget constraints, resulting in a 15% increase in client satisfaction scores.,Acquired knowledge in TV app development and created a TV app for the project using Jetpack Compose, resulting in a 40% increase in user engagement metrics.,Mentored junior developers and peers, enhancing technical skills and increasing team productivity by 30%.",
+            "Directed a high-performing team to deliver a complex engineering project that met all budget and timeline constraints while boosting client satisfaction by 15%. To expand the project's reach, I rapidly mastered TV app development to build a custom application using Jetpack Compose, effectively increasing user engagement by 40%. Alongside my technical contributions, I prioritized leadership by mentoring junior developers and peers, which enhanced the team's technical capabilities and increased overall productivity by 30%.",
           color: "#0879bf",
         },
         {
@@ -598,67 +581,6 @@ const experience = {
         },
       ],
     },
-    // {
-    //   title: "Volunteerships",
-    //   experiences: [
-    //     {
-    //       title: "Google Explore ML Facilitator",
-    //       company: "Google",
-    //       company_url: "https://about.google/",
-    //       logo_path: "google_logo.png",
-    //       duration: "June 2019 - April 2020",
-    //       location: "Hyderabad, Telangana",
-    //       description:
-    //         "Explore Machine Learning (ML) is a Google-sponsored program for university students to get started with Machine Learning. The curriculum offers 3 tracks of ML Content (Beginner, Intermediate, Advanced) and relies on university student facilitators to train other students on campus and to build opensource projects under this program.",
-    //       color: "#4285F4",
-    //     },
-    //     {
-    //       title: "Microsoft Student Partner",
-    //       company: "Microsoft",
-    //       company_url: "https://www.microsoft.com/",
-    //       logo_path: "microsoft_logo.png",
-    //       duration: "Aug 2019 - May 2020",
-    //       location: "Hyderabad, Telangana",
-    //       description:
-    //         "Microsoft Student Partner is a program for university students to lead the awareness and use of Cloud especially Azure tools in the development of their projects and startups. Under this program, I have organised hands on workshops and seminars to teach Cloud Computing concepts to students.",
-    //       color: "#D83B01",
-    //     },
-    //     {
-    //       title: "Mozilla Campus Captain",
-    //       company: "Mozilla",
-    //       company_url: "https://www.mozilla.org/",
-    //       logo_path: "mozilla_logo.png",
-    //       duration: "Oct 2019 - May 2020",
-    //       location: "Kurnool, Andhra Pradesh",
-    //       description:
-    //         "My responsibility for this program was to create opensource environment in college and in the city. We have organised multiple hackathons on the problems collected by ordinary people from Kurnool city. We have build opensource community of our own college. The community is available at dsc_iiitdmk on github.",
-    //       color: "#000000",
-    //     },
-    //     {
-    //       title: "Developer Students Club Member",
-    //       company: "DSC IIITDM Kurnool",
-    //       company_url:
-    //         "https://www.linkedin.com/company/developer-students-club-iiitdm-kurnool",
-    //       logo_path: "dsc_logo.png",
-    //       duration: "Jan 2018 - May 2020",
-    //       location: "Kurnool, Andhra Pradesh",
-    //       description:
-    //         "We have well established developer club in college which is directly associated with Google Developers. We have developed many interdisciplinary projects under the membership of this club. We have organised workshops and activities on Android Application Development, Flutter and React JS.",
-    //       color: "#0C9D58",
-    //     },
-    //     {
-    //       title: "Developer Program Member",
-    //       company: "Github",
-    //       company_url: "https://github.com/",
-    //       logo_path: "github_logo.png",
-    //       duration: "July 2019 - PRESENT",
-    //       location: "Work From Home",
-    //       description:
-    //         "I am actively contributing to many opensource projects. I have contributed to projects of organisations like Tensorflow, Uber, Facebook, Google, Scikit-learn, Kiwix, Sympy, Python, NVLabs, Fossasia, Netrack, Keras etc. These contributions include bug fixes, feature requests and formulating proper documentation for project.",
-    //       color: "#181717",
-    //     },
-    //   ],
-    // },
   ],
 };
 
@@ -667,13 +589,11 @@ const projectsHeader = {
   title: "Projects",
   description:
     "My projects makes use of vast variety of latest technology tools. My best experience is to create Data Science projects, app development using Android and iOS and deploy them to web applications using cloud infrastructure.",
-  avatar_image_path: "projects_image.svg",
 };
 
 const publicationsHeader = {
   title: "Publications",
   description: "Some of my published Articles, Blogs and Research.",
-  avatar_image_path: "projects_image.svg",
 };
 
 const publications = {
@@ -719,7 +639,6 @@ const contactPageData = {
     subtitle:
       "I like to document some of my experiences in professional career journey as well as some technical knowledge sharing.",
     link: "https://medium.com/@surya.n1447",
-    avatar_image_path: "blogs_image.svg",
   },
   addressSection: {
     title: "Address",
@@ -728,9 +647,6 @@ const contactPageData = {
     locality: "Domaluru",
     country: "India",
     region: "Bengaluru",
-    // postalCode: "",
-    // streetAddress: "Saratoga Avenue",
-    avatar_image_path: "address_image.svg",
     location_map_link: "https://maps.app.goo.gl/Py7neCH9Cd5Dy9Cr6",
   },
   phoneSection: {
