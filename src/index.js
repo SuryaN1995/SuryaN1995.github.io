@@ -19,4 +19,6 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
-serviceWorker.unregister();
+// Cache the production app shell so returning visitors can still reach the
+// portfolio and its dedicated connection state after losing their network.
+serviceWorker.register();
