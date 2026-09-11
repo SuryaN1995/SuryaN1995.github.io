@@ -6,7 +6,7 @@
   "scripts": {
     "build": "react-scripts --openssl-legacy-provider build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b pages -d build",
+    "deploy": "gh-pages -b pages -d build -u \"Surya N <surya.n1447@gmail.com>\"",
     "eject": "react-scripts eject",
     "start": "react-scripts --openssl-legacy-provider start",
     "test": "react-scripts test"
