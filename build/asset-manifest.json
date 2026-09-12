@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "./static/css/main.f458ec53.chunk.css",
-    "main.js": "./static/js/main.22d61f61.chunk.js",
-    "main.js.map": "./static/js/main.22d61f61.chunk.js.map",
+    "main.css": "./static/css/main.6915db2e.chunk.css",
+    "main.js": "./static/js/main.259c1cb4.chunk.js",
+    "main.js.map": "./static/js/main.259c1cb4.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.87e10717.js",
     "runtime-main.js.map": "./static/js/runtime-main.87e10717.js.map",
     "static/js/2.f5f43071.chunk.js": "./static/js/2.f5f43071.chunk.js",
     "static/js/2.f5f43071.chunk.js.map": "./static/js/2.f5f43071.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.f6025c2260a25fe355c63a15b9cb4894.js": "./precache-manifest.f6025c2260a25fe355c63a15b9cb4894.js",
+    "precache-manifest.ccfb26248fc6579664565620c2077f37.js": "./precache-manifest.ccfb26248fc6579664565620c2077f37.js",
     "service-worker.js": "./service-worker.js",
-    "static/css/main.f458ec53.chunk.css.map": "./static/css/main.f458ec53.chunk.css.map",
+    "static/css/main.6915db2e.chunk.css.map": "./static/css/main.6915db2e.chunk.css.map",
     "static/media/index.css": "./static/media/GoogleSans-Regular.b5c77a6a.ttf",
     "static/media/airtel_logo.svg": "./static/media/airtel_logo.dff4a311.svg",
     "static/media/datamatics_logo.svg": "./static/media/datamatics_logo.5119dcec.svg",
     "static/media/deeplearning_ai_logo.png": "./static/media/deeplearning_ai_logo.75a7107b.png",
     "static/media/ibm_logo.png": "./static/media/ibm_logo.d3fccbe1.png",
     "static/media/meta_logo.png": "./static/media/meta_logo.bdd97d28.png",
-    "static/media/procore_logo.svg": "./static/media/procore_logo.fc6a38f5.svg",
+    "static/media/procore_logo.svg": "./static/media/procore_logo.cd77adcc.svg",
     "static/media/surya_logo.png": "./static/media/surya_logo.237df44b.png"
   },
   "entrypoints": [
     "static/js/runtime-main.87e10717.js",
     "static/js/2.f5f43071.chunk.js",
-    "static/css/main.f458ec53.chunk.css",
-    "static/js/main.22d61f61.chunk.js"
+    "static/css/main.6915db2e.chunk.css",
+    "static/js/main.259c1cb4.chunk.js"
   ]
 }
