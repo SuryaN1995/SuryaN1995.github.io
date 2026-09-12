@@ -58,6 +58,34 @@
   line-height: 1.7;
 }
 
+/* ---------- Mirror shine ---------- */
+
+/* One gradient rect is the only thing that moves. The rest of the illustration
+   is a single flat SVG, so animating any of its paths would recalc the whole
+   thing every frame. */
+.experience-mirror-shine {
+  will-change: transform;
+  animation: experience-mirror-shine 5s ease-in-out infinite;
+}
+
+/* The sweep completes in the first third and then parks off the glass, so the
+   highlight reads as an occasional catch of light rather than a strobe. */
+@keyframes experience-mirror-shine {
+  0% {
+    transform: translateX(60px);
+  }
+  35%,
+  100% {
+    transform: translateX(560px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-mirror-shine {
+    animation: none;
+  }
+}
+
 @media (max-width: 1024px) {
   .experience-heading-div {
     grid-template-columns: 1fr;

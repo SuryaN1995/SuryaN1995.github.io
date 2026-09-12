@@ -13,6 +13,18 @@ export default class ExperienceImg extends Component {
         viewBox="0 0 1094 760"
       >
         <title>career process</title>
+        <defs>
+          {/* Clipping the highlight to the glass polygon keeps it off the
+              frame and the room behind the mirror. */}
+          <clipPath id="experience-mirror-glass">
+            <polygon points="216.5 24.5 442.5 24.5 521.5 594.5 288.5 626.5" />
+          </clipPath>
+          <linearGradient id="experience-mirror-shine">
+            <stop offset="0%" stopColor="#fff" stopOpacity="0" />
+            <stop offset="50%" stopColor="#fff" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#fff" stopOpacity="0" />
+          </linearGradient>
+        </defs>
         <rect
           x="155"
           y="304.52"
@@ -312,6 +324,20 @@ export default class ExperienceImg extends Component {
           transform="translate(-53 -70)"
           fill={theme.dark}
         />
+        {/* Drawn after the reflection so the highlight passes over it, the way
+            light catches real glass. Rotated to follow the mirror's lean. */}
+        <g clipPath="url(#experience-mirror-glass)">
+          <g transform="rotate(16 369 325)">
+            <rect
+              className="experience-mirror-shine"
+              x="0"
+              y="-260"
+              width="150"
+              height="1180"
+              fill="url(#experience-mirror-shine)"
+            />
+          </g>
+        </g>
         <path
           d="M621.14,204.8a131.36,131.36,0,0,1,4,16.73c.72,4.24,1.14,8.95-1.29,12.49,9.26-13.93,18.93-28.28,33-37.27A30.13,30.13,0,0,1,649,173.51c.08-.84-11.55,3.55-12.44,4.05-4.08,2.27-7.82,5.09-11.8,7.52-2.06,1.25-10.64,4.21-10.72,6,0,1.15,3.41,4.67,4.05,5.88A45.67,45.67,0,0,1,621.14,204.8Z"
           transform="translate(-53 -70)"
