@@ -1,0 +1,42 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# The compiled site is pushed back to the pages branch, which is what GitHub
+# Pages serves from, so the job needs write access to the repo.
+permissions:
+  contents: write
+
+# A queued run would otherwise race an in-flight one and publish stale output.
+concurrency:
+  group: deploy-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      # Pinned to the major version the build is verified against. react-scripts
+      # 3 predates Node 17's OpenSSL change, which is why the build script has to
+      # pass --openssl-legacy-provider.
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          publish_branch: pages
+          user_name: Surya N
+          user_email: surya.n1447@gmail.com
