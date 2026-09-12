@@ -258,8 +258,10 @@
    style recalc and layout on every frame, which is what made this stutter.
    Distances here are real CSS pixels, not viewBox units. */
 
+/* The blogs card slides sideways so it reads as a separate sheet rather than
+   bobbing in sync with the person behind it. */
 .art__card {
-  animation: art-float 3.6s ease-in-out infinite;
+  animation: art-slide 3.6s ease-in-out infinite;
 }
 
 /* Offset duration so the person drifts out of step with the card. */
@@ -288,6 +290,18 @@
   }
   50% {
     transform: translateY(-6px);
+  }
+}
+
+/* Kept symmetric so the card's resting position stays where it was drawn,
+   against the person's hand. */
+@keyframes art-slide {
+  0%,
+  100% {
+    transform: translateX(-6px);
+  }
+  50% {
+    transform: translateX(6px);
   }
 }
 
