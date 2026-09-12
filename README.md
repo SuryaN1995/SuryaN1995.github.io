@@ -15,22 +15,20 @@
 
 To view a live example, **[click here](https://suryan1995.github.io/)**
 
-# Clone and Use 📋
+# Run locally 📋
 
-- The website is completely built on `react-js` library of `javascript` and that's why we need `nodejs` and `npm` installed
-- While installing `nodejs` and `npm`, try to install versions which are equal or greater than the versions mentioned in badges above
-- In case you want to help developing it or simply saving it, you can fork the repository just by clicking the button on the top-right corner of this page
-- After the successful installation of `nodejs` and `npm`, clone the repository into your local system using below command:
-  ```bash
-   git clone https://github.com/suryan1995/suryan1995.github.io.git
-  ```
-  This will clone the whole repository in your system.
-- To download required dependencies to your system, navigate to the directory where the cloned repository resides and execute following command:
-  ```node
-  npm install
-  ```
-- Now the project is ready to use
-- You can check it using `npm start`, it will open the website locally on your browser.
+The site is a Create React App project. Use **Node 24** locally so it matches CI. `react-scripts` 3 needs OpenSSL's legacy provider on modern Node; `npm start` and `npm run build` already pass `--openssl-legacy-provider`.
+
+```bash
+git clone https://github.com/SuryaN1995/SuryaN1995.github.io.git
+cd SuryaN1995.github.io
+npm ci
+npm start
+```
+
+`npm ci` installs from `package-lock.json`. Use `npm install` only when you intend to change dependencies.
+
+The app runs at `http://localhost:3000`. Compiled output goes to `build/` and is gitignored; do not commit it.
 
 # Customize it to make your own portfolio ✏️
 
@@ -133,24 +131,23 @@ Therefore, this part of portfolio is not customizable. But don't worry we have a
 
 # Deployment 📦
 
-- Once you are done with your setup and have successfully completed all steps above, you need to put your website online!
-- I highly recommend using [Github Pages](https://create-react-app.dev/docs/deployment/#github-pages) to achieve this the EASIEST WAY.
-- To deploy your website, you have two options. First you need to create a github repository with the name `<your-github-username>.github.io`. Please don't give it any other name.
-- Now, you need to generate a production build and deploy the website.
+GitHub Pages serves this site from the **`pages` branch**. Source lives on **`main`**. The compiled `build/` folder is not tracked.
 
-**Option 1:**
+Pushing to `main` runs [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml): it installs with `npm ci`, builds, and publishes `build/` to `pages`. You can also start that workflow from the Actions tab (`workflow_dispatch`).
 
-- Run `npm run build` to generate the production build folder.
-- Enter the build folder, `git init` and push the generated code to the `master` branch of your new repository on github. That's it. It's Done.
-- You may need to `git init` and force push at every new build.
+```bash
+git push origin main
+```
 
-**Option 2 (will not work with [user pages](https://docs.github.com/en/github/working-with-github-pages/about-github-pages)):**
+Watch the **Deploy** workflow. When it is green, the live site is at [suryan1995.github.io](https://suryan1995.github.io/). GitHub Pages in this repo is set to the `pages` branch.
 
-- Run `npm run deploy` to build and create a branch called `gh-pages`. It will push the `build` files to that branch.
-- The last step in deploying is to enable `Github Pages` in settings of the repository and select `gh-pages` branch.
+To publish a local build without waiting for CI:
 
-Now, your website is successfully deployed and you can visit it at `<your-github-username>.github.io`.  
-If you are stuck somewhere and want to observe the deployment process in depth, then please watch below video.
+```bash
+npm run deploy
+```
+
+That still builds first (`predeploy`), then uses `gh-pages` to push `build/` to `pages`. Prefer the GitHub Action for day-to-day deploys so the published site is not whatever happened to be in a working directory.
 
 # Technologies used 🛠️
 
