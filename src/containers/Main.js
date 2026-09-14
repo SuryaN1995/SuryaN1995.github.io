@@ -9,6 +9,7 @@ import Projects from "../pages/projects/Projects";
 import { settings } from "../portfolio.js";
 import Error404 from "../pages/errors/error404/Error";
 import Offline from "../pages/errors/offline/Offline";
+import ScrollToTop from "../components/scrollToTop/ScrollToTop";
 
 export default class Main extends Component {
   state = {
@@ -32,6 +33,7 @@ export default class Main extends Component {
   render() {
     return (
       <BrowserRouter basename="/">
+        <ScrollToTop />
         {!this.state.isOnline ? (
           <Offline
             theme={this.props.theme}
