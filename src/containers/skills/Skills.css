@@ -5,10 +5,11 @@
 
 .skills-header {
   margin: 0;
-  font-family: "Google Sans Bold", inherit;
+  font-family: var(--font-display);
+  font-weight: 700;
   font-size: var(--text-3xl);
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
   color: var(--color-text);
 }
 
@@ -37,12 +38,12 @@
 }
 
 .skills-text-div {
-  font-family: "Google Sans Regular", inherit;
+  font-family: var(--font-body);
 }
 
 .skills-heading {
   margin: 0 0 var(--space-4);
-  font-family: "Google Sans Bold", inherit;
+  font-family: var(--font-ui);
   font-size: var(--text-2xl);
   line-height: 1.15;
   letter-spacing: -0.02em;

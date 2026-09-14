@@ -34,16 +34,17 @@
 
 .projects-heading-text {
   margin: 0;
-  font-family: "Google Sans Bold", inherit;
+  font-family: var(--font-display);
+  font-weight: 700;
   font-size: var(--text-3xl);
   line-height: 1.08;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
   color: var(--color-text);
 }
 
 .projects-heading-sub-text {
   margin: var(--space-3) 0 0;
-  font-family: "Google Sans Regular", inherit;
+  font-family: var(--font-body);
   font-size: var(--text-xl);
   color: var(--color-text);
 }
@@ -52,7 +53,7 @@
   max-width: 60ch;
   margin: var(--space-4) 0 0;
   color: var(--color-muted);
-  font-family: "Google Sans Regular", inherit;
+  font-family: var(--font-body);
   font-size: var(--text-base);
   line-height: 1.7;
 }
@@ -67,10 +68,11 @@
 
 .publications-heading-text {
   margin: 0;
-  font-family: "Google Sans Bold", inherit;
+  font-family: var(--font-display);
+  font-weight: 700;
   font-size: var(--text-3xl);
   line-height: 1.1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
   color: var(--color-text);
 }
 

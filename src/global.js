@@ -24,9 +24,16 @@ export const GlobalStyles = createGlobalStyle`
     --color-accent: ${({ theme }) => theme.accentColor};
     --color-accent-rgb: ${({ theme }) => rgbTriplet(theme.accentColor)};
     --color-accent-contrast: ${({ theme }) => readableOn(theme.accentColor)};
-    --color-accent-strong: ${({ theme }) => theme.jacketColor};
     --color-highlight: ${({ theme }) => theme.highlight};
     --shadow-rgb: ${({ theme }) => rgbTriplet(shadowBase(theme))};
+
+    --font-body: "Google Sans Regular", Inter, -apple-system,
+      BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-ui: "Google Sans Medium", Inter, -apple-system,
+      BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
+      serif;
+    --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
     /* Flips black-on-transparent logo assets so they stay legible on dark themes. */
     --logo-invert: ${({ theme }) =>
       isDark(theme.body) ? "invert(1)" : "none"};
@@ -88,10 +95,10 @@ export const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
     min-height: 100vh;
+    color-scheme: ${({ theme }) => theme.mode || "light"};
     background: var(--color-bg);
     color: var(--color-text);
-    font-family: "Google Sans Regular", Inter, -apple-system,
-      BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: var(--font-body);
     transition:
       background-color var(--dur) var(--ease-out),
       color var(--dur) var(--ease-out);

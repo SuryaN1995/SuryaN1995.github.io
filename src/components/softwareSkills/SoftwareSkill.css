@@ -35,6 +35,11 @@
   height: 34px;
   width: auto;
   filter: var(--logo-invert);
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.software-skill-inline:hover .skill-image {
+  transform: scale(1.1);
 }
 
 @media (max-width: 1024px) {

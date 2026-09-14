@@ -1,27 +1,26 @@
 @font-face {
   font-family: "Corinthia Bold";
   src: local("Corinthia Bold"),
-    url("./assets/fonts/Corinthia-Bold.ttf") format("woff");
+    url("./assets/fonts/Corinthia-Bold.ttf") format("truetype");
+  font-display: swap;
 }
 @font-face {
   font-family: "Google Sans Bold";
   src: local("Google Sans Bold"),
-    url("./assets/fonts/GoogleSans-Bold.ttf") format("woff");
-}
-@font-face {
-  font-family: "Google Sans Bold Italic";
-  src: local("Google Sans Bold Italic"),
-    url("./assets/fonts/GoogleSans-BoldItalic.ttf") format("woff");
+    url("./assets/fonts/GoogleSans-Bold.ttf") format("truetype");
+  font-display: swap;
 }
 @font-face {
   font-family: "Google Sans Medium";
   src: local("Google Sans Medium"),
-    url("./assets/fonts/GoogleSans-Medium.ttf") format("woff");
+    url("./assets/fonts/GoogleSans-Medium.ttf") format("truetype");
+  font-display: swap;
 }
 @font-face {
   font-family: "Google Sans Regular";
   src: local("Google Sans Regular"),
-    url("./assets/fonts/GoogleSans-Regular.ttf") format("woff");
+    url("./assets/fonts/GoogleSans-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -34,6 +33,16 @@ body {
   overflow-x: hidden;
 }
 
+/* Skip layout and paint for heavy below-fold collections until they approach
+   the viewport, while reserving a stable estimated height. */
+.skills-main-div,
+.repo-cards-div-main,
+.certs-body-div,
+.educations-body-div {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 620px;
+}
+
 body {
   margin: 0;
   font-size: 17px;
@@ -41,6 +50,135 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+/* Decorative motion is applied to each complete SVG, keeping browser work on
+   the compositor instead of recalculating hundreds of paths every frame. */
+.greeting-image-div svg {
+  transform-origin: 50% 55%;
+  animation: portfolio-float 7s ease-in-out infinite;
+}
+
+.heading-img-div svg {
+  transform-origin: 50% 55%;
+  animation: portfolio-tilt-float 8s ease-in-out infinite;
+}
+
+.projects-heading-img-div svg {
+  transform-origin: 50% 60%;
+  animation: portfolio-drift 9s ease-in-out infinite;
+}
+
+.experience-heading-img-div svg {
+  transform-origin: 50% 65%;
+  animation: portfolio-float 7.6s ease-in-out infinite reverse;
+}
+
+.skills-main-div:nth-of-type(odd) .skills-image-div svg {
+  transform-origin: 50% 65%;
+  animation: portfolio-float 8.4s ease-in-out infinite;
+}
+
+.skills-main-div:nth-of-type(even) .skills-image-div svg {
+  transform-origin: 50% 65%;
+  animation: portfolio-drift 9.2s ease-in-out infinite reverse;
+}
+
+/* App.js marks only nearby illustrations as active. Descendant selectors also
+   pause the character blink, mirror shine, portrait ring, and contact layers. */
+.motion-watch:not(.motion-visible),
+.motion-watch:not(.motion-visible) *,
+.motion-paused .motion-watch,
+.motion-paused .motion-watch * {
+  animation-play-state: paused !important;
+}
+
+/* A short editorial rule ties the display face back to the orange palette.
+   It animates once when a page mounts and adds no continuous rendering work. */
+.greeting-text::after,
+.heading-text::after,
+.experience-heading-text::after,
+.projects-heading-text::after,
+.contact-hero__title::after,
+.skills-header::after,
+.educations-header::after,
+.certs-header::after,
+.publications-heading-text::after {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 3px;
+  margin-top: 0.32em;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(
+    90deg,
+    var(--color-accent),
+    rgba(var(--color-accent-rgb), 0.25)
+  );
+  transform-origin: left;
+  animation: title-rule-in 560ms var(--ease-out) both;
+}
+
+.skills-header::after,
+.educations-header::after,
+.certs-header::after,
+.publications-heading-text::after {
+  margin-right: auto;
+  margin-left: auto;
+  transform-origin: center;
+}
+
+@keyframes title-rule-in {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes portfolio-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -9px, 0);
+  }
+}
+
+@keyframes portfolio-tilt-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-0.35deg);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0) rotate(0.45deg);
+  }
+}
+
+@keyframes portfolio-drift {
+  0%,
+  100% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  50% {
+    transform: translate3d(5px, -6px, 0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .greeting-text::after,
+  .heading-text::after,
+  .experience-heading-text::after,
+  .projects-heading-text::after,
+  .contact-hero__title::after {
+    margin-right: auto;
+    margin-left: auto;
+    transform-origin: center;
+  }
 }
 
 img {

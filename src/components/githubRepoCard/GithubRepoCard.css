@@ -73,9 +73,11 @@
 .repo-creation-date {
   margin: 0;
   color: var(--color-muted);
-  font-family: "Google Sans Regular", inherit;
-  font-size: var(--text-xs);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
   font-weight: 400;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
 }
 
 .repo-languages {

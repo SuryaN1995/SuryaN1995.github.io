@@ -1,4 +1,5 @@
 .main-button {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
@@ -15,11 +16,36 @@
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  overflow: hidden;
+  isolation: isolate;
   box-shadow: var(--shadow-md);
   transition: transform var(--dur) var(--ease-out),
     box-shadow var(--dur) var(--ease-out),
     background-color var(--dur) var(--ease-out),
     color var(--dur) var(--ease-out);
+}
+
+.main-button::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: -80%;
+  bottom: -80%;
+  left: -45%;
+  width: 34%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--color-bg-rgb), 0.2),
+    transparent
+  );
+  transform: skewX(-18deg) translateX(-260%);
+  transition: transform 620ms var(--ease-out);
+  pointer-events: none;
+}
+
+.main-button:hover::before {
+  transform: skewX(-18deg) translateX(620%);
 }
 
 .main-button:hover {

@@ -305,3 +305,73 @@
     transform: scale(0.96);
   }
 }
+
+/* The source artwork originally animated nine body groups independently.
+   Keep the expressive eye and laptop details, but let the compositor-driven
+   outer SVG float handle the body. This cuts continuous animation work while
+   making the character feel calmer and more intentional. */
+#mouth,
+#legs,
+#pe,
+#shirt,
+#tshirt,
+#head,
+#ears {
+  animation: none;
+  transform: none;
+}
+
+#eyey2 {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: hero-glance 5.8s ease-in-out infinite;
+}
+
+#brows {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: hero-expression 5.8s ease-in-out infinite;
+}
+
+#notebook {
+  animation: hero-laptop 6.6s ease-in-out infinite;
+}
+
+@keyframes hero-glance {
+  0%,
+  35%,
+  100% {
+    transform: translateX(-1px) scaleY(1);
+  }
+  42%,
+  45% {
+    transform: translateX(1px) scaleY(0.12);
+  }
+  52%,
+  76% {
+    transform: translateX(2px) scaleY(1);
+  }
+}
+
+@keyframes hero-expression {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  44% {
+    transform: translateY(1.5px);
+  }
+  58% {
+    transform: translateY(-1px);
+  }
+}
+
+@keyframes hero-laptop {
+  0%,
+  100% {
+    transform: translateY(-2px);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+}

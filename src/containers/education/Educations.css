@@ -5,10 +5,11 @@
 
 .educations-header {
   margin: 0;
-  font-family: "Google Sans Bold", inherit;
+  font-family: var(--font-display);
+  font-weight: 700;
   font-size: var(--text-2xl);
   line-height: 1.15;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.035em;
   text-align: center;
   color: var(--color-text);
 }
