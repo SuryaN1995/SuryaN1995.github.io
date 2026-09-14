@@ -27,9 +27,16 @@ code {
     monospace;
 }
 
-html,
-body {
-  scroll-behavior: smooth;
+/* Horizontal clipping belongs on the root only. Setting overflow-x on body
+   forces its overflow-y to compute to `auto`, which makes body a second scroll
+   container nested inside the viewport; the wheel then has to exhaust body
+   before chaining out, so scrolling stalls every gesture.
+
+   No scroll-behavior here on purpose: Chrome applies it to wheel and keyboard
+   input too, so rapid input retargets an in-flight animation and travels an
+   unpredictable distance. The one place that wants an animated scroll is the
+   back-to-top button, which passes behavior: "smooth" itself. */
+html {
   overflow-x: hidden;
 }
 
