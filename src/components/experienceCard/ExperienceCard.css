@@ -7,9 +7,8 @@
   padding: var(--timeline-gap) 0;
 }
 
-/* react-reveal puts its class on this same div, so it is the flex item in the
-   row. Without flex:none it shrinks and the global img{max-width:100%} squashes
-   the logo into an ellipse. */
+/* This div is the flex item in the timeline row. Without flex:none it shrinks
+   and the global img{max-width:100%} squashes the logo into an ellipse. */
 .experience-card-logo-div {
   flex: none;
   margin: 0 var(--space-4) 0 0;

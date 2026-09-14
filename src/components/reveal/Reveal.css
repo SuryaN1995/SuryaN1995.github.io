@@ -1,0 +1,32 @@
+.reveal {
+  transition: opacity var(--reveal-duration) var(--ease-out) var(--reveal-delay),
+    transform var(--reveal-duration) var(--ease-out) var(--reveal-delay);
+}
+
+/* Only the hidden state sets a transform. Once revealed the element falls back
+   to whatever transform its own rules define, so card hover lifts still work. */
+.reveal:not(.reveal-visible) {
+  opacity: 0;
+  transform: translate3d(var(--reveal-x), var(--reveal-y), 0);
+}
+
+.reveal--flip:not(.reveal-visible) {
+  transform: translate3d(0, var(--reveal-y), 0) rotateY(-14deg);
+  transform-origin: center;
+}
+
+/* No observer available, or the visitor asked for less motion. */
+.reveal-static .reveal:not(.reveal-visible) {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal:not(.reveal-visible) {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

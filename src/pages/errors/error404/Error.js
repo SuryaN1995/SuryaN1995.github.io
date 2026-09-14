@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../../components/header/Header";
 import Footer from "../../../components/footer/Footer";
 import TopButton from "../../../components/topButton/TopButton";
-import { Fade } from "react-reveal";
+import { Fade } from "../../../components/reveal/Reveal";
 import "./Error.css";
 import { Link } from "react-router-dom";
 

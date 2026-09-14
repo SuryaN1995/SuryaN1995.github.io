@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Educations.css";
 import DegreeCard from "../../components/degreeCard/DegreeCard.js";
 import { degrees } from "../../portfolio";
-import { Fade } from "react-reveal";
+import { Fade } from "../../components/reveal/Reveal";
 
 class Educations extends Component {
   render() {

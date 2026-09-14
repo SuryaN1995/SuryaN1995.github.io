@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./DegreeCard.css";
-import { Fade, Flip } from "react-reveal";
+import { Fade, Flip } from "../reveal/Reveal";
 
 class DegreeCard extends Component {
   render() {
@@ -12,7 +12,7 @@ class DegreeCard extends Component {
           <Flip left duration={2000}>
             <div
               className="card-img"
-              style={{ backgroundColor: theme.imageHighlight }}
+              style={{ backgroundColor: theme.accentColor }}
             >
               <img
                 src={require(`../../assets/images/${degree.logo_path}`)}

@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import { Fade } from "react-reveal";
+import { Fade } from "../reveal/Reveal";
 import { greeting, socialMediaLinks } from "../../portfolio.js";
 
 // Reuse the address already configured for the Gmail link rather than

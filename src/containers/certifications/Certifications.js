@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Certifications.css";
-import { Fade } from "react-reveal";
+import { Fade } from "../../components/reveal/Reveal";
 import { certifications } from "../../portfolio";
 import CertificationCard from "../../components/certificationCard/CertificationCard";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../../components/header/Header";
 import Footer from "../../../components/footer/Footer";
-import { Fade } from "react-reveal";
+import { Fade } from "../../../components/reveal/Reveal";
 import "../error404/Error.css";
 import "./Offline.css";
 
