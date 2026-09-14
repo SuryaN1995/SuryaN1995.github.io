@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import "./ThemeSwitcher.css";
 import { themesList } from "../../theme";
+import { mix } from "../../styles/color";
 
 const PANEL_WIDTH = 380;
 const PANEL_OFFSET = 12;
@@ -141,6 +142,63 @@ export default function ThemeSwitcher({ theme, onThemeChange }) {
     if (nextOption) nextOption.focus();
   };
 
+  const isFocusedModePicker =
+    themesList.length === 2 && themesList.every((entry) => entry.theme.mode);
+
+  if (isFocusedModePicker) {
+    const nextTheme = themesList[activeIndex === 0 ? 1 : 0];
+    const nextMode = nextTheme.theme.mode;
+
+    return (
+      <div className="theme-switcher">
+        <button
+          ref={triggerRef}
+          type="button"
+          className="theme-switcher__trigger theme-switcher__trigger--mode"
+          aria-label={`Switch to ${nextMode} mode`}
+          title={`Switch to ${nextMode} mode`}
+          onClick={() => selectTheme(nextTheme)}
+          style={{
+            color: theme.text,
+            backgroundColor: theme.highlight,
+            borderColor: withAlpha(theme.text, 0.12),
+            "--ts-accent": theme.accentColor,
+          }}
+        >
+          <svg
+            className="theme-switcher__mode-icon"
+            viewBox="0 0 24 24"
+            width="17"
+            height="17"
+            aria-hidden="true"
+            focusable="false"
+          >
+            {nextMode === "dark" ? (
+              <path
+                d="M20.2 15.3A8.5 8.5 0 0 1 8.7 3.8 8.7 8.7 0 1 0 20.2 15.3Z"
+                fill="currentColor"
+              />
+            ) : (
+              <>
+                <circle cx="12" cy="12" r="3.5" fill="currentColor" />
+                <path
+                  d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                />
+              </>
+            )}
+          </svg>
+          <span className="theme-switcher__label">
+            {nextMode === "dark" ? "Dark" : "Light"}
+          </span>
+        </button>
+      </div>
+    );
+  }
+
   const panelStyle = panelPosition
     ? {
         top: panelPosition.top,
@@ -180,7 +238,11 @@ export default function ThemeSwitcher({ theme, onThemeChange }) {
         <span
           className="theme-switcher__chip"
           style={{
-            background: `linear-gradient(135deg, ${theme.accentColor} 0%, ${theme.jacketColor} 100%)`,
+            background: `linear-gradient(135deg, ${theme.accentColor} 0%, ${mix(
+              theme.accentColor,
+              theme.dark,
+              0.45
+            )} 100%)`,
             borderColor: withAlpha(theme.text, 0.18),
           }}
         />
@@ -259,9 +321,7 @@ export default function ThemeSwitcher({ theme, onThemeChange }) {
                       <span
                         style={{ backgroundColor: entry.theme.accentColor }}
                       />
-                      <span
-                        style={{ backgroundColor: entry.theme.jacketColor }}
-                      />
+                      <span style={{ backgroundColor: entry.theme.text }} />
                       <span style={{ backgroundColor: entry.theme.text }} />
                     </span>
                     <span className="theme-option__name">

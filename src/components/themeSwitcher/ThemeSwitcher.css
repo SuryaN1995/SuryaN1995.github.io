@@ -44,6 +44,16 @@
   white-space: nowrap;
 }
 
+.theme-switcher__trigger--mode {
+  min-width: 94px;
+  justify-content: center;
+}
+
+.theme-switcher__mode-icon {
+  flex: none;
+  color: var(--ts-accent);
+}
+
 .theme-switcher__chevron {
   flex: none;
   opacity: 0.7;

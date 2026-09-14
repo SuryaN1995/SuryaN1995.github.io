@@ -320,7 +320,76 @@ export const materialTealTheme = {
   avatarShoes: "#07292c",
 };
 
-export const themesList = [
+// The public experience stays intentionally focused on one polished light/dark
+// pair. Set this to true to expose all of the original portfolio palettes in
+// the theme picker without having to restore or duplicate any theme code.
+export const ENABLE_EXTENDED_THEMES = false;
+
+// Every person drawn on the site is the same person, so their colours are fixed
+// rather than themed. Only the surfaces behind them react to light and dark,
+// which is what keeps the figures recognisable across both modes.
+const figurePalette = {
+  skinColor: "#F2B295",
+  skinShade: "#DB9678",
+  hairColor: "#171A24",
+  shirtColor: "#F26B38",
+  pantsColor: "#46587A",
+  shoeColor: "#11141C",
+};
+
+export const portfolioLightTheme = {
+  mode: "light",
+  body: "#F6F7F9",
+  text: "#182033",
+  secondaryText: "#596275",
+  highlight: "#FFFFFF",
+  dark: "#0F172A",
+  accentColor: "#BE4615",
+  headerColor: "#E8652A4D",
+  splashBg: "#182033",
+  // Illustration surfaces, from the brightest sheet back to the softest wash.
+  imageScreen: "#FFFFFF",
+  imagePanel: "#182033",
+  imageLine: "#E3E7ED",
+  imageChip: "#FBDCCD",
+  imageBackdrop: "#FBE7DE",
+  ...figurePalette,
+};
+
+export const portfolioDarkTheme = {
+  mode: "dark",
+  body: "#0C111B",
+  text: "#EEF2F7",
+  secondaryText: "#AAB4C4",
+  highlight: "#151D2A",
+  dark: "#05080F",
+  accentColor: "#FF8750",
+  headerColor: "#FF875052",
+  splashBg: "#080C14",
+  imageScreen: "#1E2838",
+  imagePanel: "#32425C",
+  imageLine: "#8C9BB2",
+  imageChip: "#334057",
+  imageBackdrop: "#161F2E",
+  ...figurePalette,
+};
+
+const primaryThemes = [
+  {
+    id: "portfolioLightTheme",
+    displayName: "Light",
+    icon: "sun",
+    theme: portfolioLightTheme,
+  },
+  {
+    id: "portfolioDarkTheme",
+    displayName: "Dark",
+    icon: "moon",
+    theme: portfolioDarkTheme,
+  },
+];
+
+const extendedThemes = [
   {
     id: "defaultTheme",
     displayName: "Default Theme",
@@ -406,3 +475,36 @@ export const themesList = [
     theme: yellowTheme,
   },
 ];
+
+// The illustration and figure tokens landed after the original palettes, so
+// each one maps back to the token its shapes used to read from. That keeps the
+// palettes behind ENABLE_EXTENDED_THEMES rendering as they did before.
+const ILLUSTRATION_FALLBACKS = {
+  imageScreen: "highlight",
+  imagePanel: "text",
+  imageLine: "compImgHighlight",
+  imageChip: "compImgHighlight",
+  imageBackdrop: "compImgHighlight",
+  skinShade: "skinColor",
+  hairColor: "dark",
+  shirtColor: "imageHighlight",
+  pantsColor: "imageClothes",
+  shoeColor: "avatarShoes",
+};
+
+function withIllustrationTokens(theme) {
+  const filled = { ...theme };
+
+  Object.entries(ILLUSTRATION_FALLBACKS).forEach(([token, fallback]) => {
+    if (!filled[token]) {
+      filled[token] = theme[fallback];
+    }
+  });
+
+  return filled;
+}
+
+export const themesList = (ENABLE_EXTENDED_THEMES
+  ? [...primaryThemes, ...extendedThemes]
+  : primaryThemes
+).map((entry) => ({ ...entry, theme: withIllustrationTokens(entry.theme) }));
