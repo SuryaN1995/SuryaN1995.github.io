@@ -14,6 +14,10 @@ import ScrollToTop from "../components/scrollToTop/ScrollToTop";
 export default class Main extends Component {
   state = {
     isOnline: typeof navigator === "undefined" ? true : navigator.onLine,
+    // Every page is static and served from the precache, so a visitor who is
+    // offline can still read the whole site. Let them opt out of the notice
+    // rather than treating it as a dead end.
+    browseOffline: false,
   };
 
   componentDidMount() {
@@ -30,15 +34,27 @@ export default class Main extends Component {
     this.setState({ isOnline: navigator.onLine });
   };
 
+  handleBrowseOffline = () => {
+    this.setState({ browseOffline: true });
+  };
+
+  // The offline page only reports back once it has actually reached the
+  // network, which is a stronger signal than navigator.onLine. Trust it
+  // rather than re-reading the flag, which can still say offline here.
+  handleReconnected = () => {
+    this.setState({ isOnline: true });
+  };
+
   render() {
     return (
       <BrowserRouter basename="/">
         <ScrollToTop />
-        {!this.state.isOnline ? (
+        {!this.state.isOnline && !this.state.browseOffline ? (
           <Offline
             theme={this.props.theme}
             onThemeChange={this.props.onThemeChange}
-            onRetry={this.handleConnectionChange}
+            onReconnected={this.handleReconnected}
+            onContinue={this.handleBrowseOffline}
           />
         ) : (
           <Switch>
