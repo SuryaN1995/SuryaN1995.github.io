@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "./static/css/main.971d2d0d.chunk.css",
-    "main.js": "./static/js/main.62573e91.chunk.js",
-    "main.js.map": "./static/js/main.62573e91.chunk.js.map",
+    "main.css": "./static/css/main.8c597df5.chunk.css",
+    "main.js": "./static/js/main.7bde363c.chunk.js",
+    "main.js.map": "./static/js/main.7bde363c.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.87e10717.js",
     "runtime-main.js.map": "./static/js/runtime-main.87e10717.js.map",
     "static/js/2.77c1159d.chunk.js": "./static/js/2.77c1159d.chunk.js",
     "static/js/2.77c1159d.chunk.js.map": "./static/js/2.77c1159d.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.5da3ad10294c1cd4a71d81a4a1ad4e07.js": "./precache-manifest.5da3ad10294c1cd4a71d81a4a1ad4e07.js",
+    "precache-manifest.f1bacd4c95f72b5e36ebda308e5521e7.js": "./precache-manifest.f1bacd4c95f72b5e36ebda308e5521e7.js",
     "service-worker.js": "./service-worker.js",
-    "static/css/main.971d2d0d.chunk.css.map": "./static/css/main.971d2d0d.chunk.css.map",
+    "static/css/main.8c597df5.chunk.css.map": "./static/css/main.8c597df5.chunk.css.map",
     "static/media/index.css": "./static/media/GoogleSans-Regular.b5c77a6a.ttf",
     "static/media/airtel_logo.svg": "./static/media/airtel_logo.dff4a311.svg",
     "static/media/datamatics_logo.svg": "./static/media/datamatics_logo.5119dcec.svg",
@@ -23,7 +23,7 @@
   "entrypoints": [
     "static/js/runtime-main.87e10717.js",
     "static/js/2.77c1159d.chunk.js",
-    "static/css/main.971d2d0d.chunk.css",
-    "static/js/main.62573e91.chunk.js"
+    "static/css/main.8c597df5.chunk.css",
+    "static/js/main.7bde363c.chunk.js"
   ]
 }
